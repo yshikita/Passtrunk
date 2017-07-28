@@ -2925,7 +2925,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             websitePanel.setVisible(false);
             wirelessPanel.setVisible(false);
             customSP.setVisible(false);
-        } else if (chooseCredCB.getSelectedItem().equals("Social Security Number (SSN)")) {
+        } else if (chooseCredCB.getSelectedItem().equals("Social Security Number(SSN)")) {
             addCredLP.setVisible(true);
             bankAcctPanel.setVisible(false);
             creditCardPanel.setVisible(false);
