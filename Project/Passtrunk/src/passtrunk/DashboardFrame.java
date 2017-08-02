@@ -28,7 +28,9 @@ public class DashboardFrame extends javax.swing.JFrame {
     ArrayList <JLabel> labelList;
     ArrayList <JTextField> textFieldList;
     int custFieldIndex;
-    
+    int teamIndex;
+    ArrayList<String> credNames;
+    ArrayList<String> teamNames;
     
     /**
      * Creates new form DashboardFrame
@@ -36,6 +38,8 @@ public class DashboardFrame extends javax.swing.JFrame {
     public DashboardFrame() {
         labelList = new ArrayList();
         textFieldList = new ArrayList();
+        credNames = new ArrayList();
+        teamNames = new ArrayList();
         initComponents();
     }
 
@@ -296,6 +300,12 @@ public class DashboardFrame extends javax.swing.JFrame {
         fieldCont1 = new javax.swing.JTextField();
         addFieldCustButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        pwLengthCB = new javax.swing.JComboBox<>();
+        inSymbChB = new javax.swing.JCheckBox();
+        incNumbChB = new javax.swing.JCheckBox();
+        pwGeneratedTF = new javax.swing.JTextField();
+        generatePwButton = new javax.swing.JButton();
         teamsPanel = new javax.swing.JPanel();
         teamsListPanel = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -554,8 +564,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(credList);
 
         credSearchTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                credSearchTFKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                credSearchTFKeyReleased(evt);
             }
         });
 
@@ -1319,7 +1329,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(searchCredManTF, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1550,7 +1560,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel82)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addPasswordEmTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addEmailPanel, "card4");
@@ -1599,7 +1609,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel86)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addEmailLogTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addLoginPanel, "card5");
@@ -1656,7 +1666,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel91)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addExpDateSoftTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addSoftLicPanel, "card6");
@@ -1697,7 +1707,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel94)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addSsnumTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addSsnPanel, "card7");
@@ -1762,7 +1772,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel100)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addEmailWeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addWebsitePanel, "card8");
@@ -1819,7 +1829,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addComponent(jLabel105)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addPasswordWiTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addWirelessPanel, "card9");
@@ -1912,15 +1922,58 @@ public class DashboardFrame extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Password Generator"));
 
+        jLabel10.setText("Password Length:");
+
+        pwLengthCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128" }));
+
+        inSymbChB.setText("Include symbols");
+
+        incNumbChB.setText("Include numbers");
+
+        generatePwButton.setBackground(new java.awt.Color(64, 138, 201));
+        generatePwButton.setForeground(new java.awt.Color(255, 255, 255));
+        generatePwButton.setText("Generate");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pwGeneratedTF, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(pwLengthCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(inSymbChB)
+                                .addGap(18, 18, 18)
+                                .addComponent(incNumbChB))
+                            .addComponent(generatePwButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(pwLengthCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inSymbChB)
+                    .addComponent(incNumbChB))
+                .addGap(18, 18, 18)
+                .addComponent(pwGeneratedTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(generatePwButton)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout credMngrPanelLayout = new javax.swing.GroupLayout(credMngrPanel);
@@ -1939,7 +1992,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         credMngrPanelLayout.setVerticalGroup(
             credMngrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3019,6 +3072,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                         break;
                     }
                 }
+                break;
             }
             ef.setVisible(true);
             ef.setDf(this);
@@ -3032,23 +3086,69 @@ public class DashboardFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_credEditButtonActionPerformed
 
-    private void credSearchTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_credSearchTFKeyTyped
-
-    }//GEN-LAST:event_credSearchTFKeyTyped
-
     private void teamSearchTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_teamSearchTFKeyTyped
 
     }//GEN-LAST:event_teamSearchTFKeyTyped
 
     private void teamEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamEditButtonActionPerformed
         String teamname = teamList.getSelectedValue();
-        if(teamname !=null && !teamname.isEmpty()){
-            
-            
+        if(teamname !=null && !teamname.isEmpty() && !" ()".equals(teamname)){
+            DefaultListModel tModelCred = new DefaultListModel();
+            DefaultListModel tModelMemb = new DefaultListModel();
+            String teamName = "";
+            String teamSName = "";
+            String urlCred = "https://passtrunk.com/api/credential/team";
+            String urlMemb = "https://passtrunk.com/api/team/members";
+            String reqbody;
+            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++){
+                if(teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
+                    try {
+                        teamName = RequestsHTTP.user.teams.get(i).getName();
+                        teamSName = RequestsHTTP.user.teams.get(i).getShortName();
+                        RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
+                        RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
+                        
+                        //Populating Team Credentials:
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                        RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
+                        reqhttpCred.doTransaction("getteamcreds", i);
+                        for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
+                            tModelCred.addElement(cred.getName());
+                        }
+                        
+                        //Populating Team members:
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                        RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
+                        reqhttpMemb.doTransaction("getteammembers", i);
+                        for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
+                            tModelMemb.addElement(user.getUserFullName());
+                        }
+                        break;
+                    } catch (UnsupportedEncodingException ex) {
+                        Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+            bigTeamCredList.setModel(tModelCred);
+            bigTeamMembList.setModel(tModelMemb);
             teamNameDetLabel.setText(teamname);
             dashboardPanel.setVisible(false);
+            addCredPanel.setVisible(false);
+            credMngrPanel.setVisible(false);
+            teamsPanel.setVisible(false);
             teamDetailBigPanel.setVisible(true);
-            
+            teamMngrPanel.setVisible(false);
+            newsFeedPanel.setVisible(false);
+            lastLoginPanel.setVisible(false);
+            settingsPanel.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Info: Please select a team.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_teamEditButtonActionPerformed
 
@@ -3278,7 +3378,64 @@ public class DashboardFrame extends javax.swing.JFrame {
         if(teamname !=null && !teamname.isEmpty()){
             teamsPanel.setVisible(false);
             teamDetailBigPanel.setVisible(true);
+            dashboardPanel.setVisible(false);
+            addCredPanel.setVisible(false);
+            credMngrPanel.setVisible(false);
+            teamMngrPanel.setVisible(false);
+            newsFeedPanel.setVisible(false);
+            lastLoginPanel.setVisible(false);
+            settingsPanel.setVisible(false);
             teamNameDetLabel.setText(teamname);
+            
+            String teamName = "";
+            String teamSName = "";
+            String urlCred = "https://passtrunk.com/api/credential/team";
+            String urlMemb = "https://passtrunk.com/api/team/members";
+            String reqbody;
+            DefaultListModel tModelCred = new DefaultListModel();
+            DefaultListModel tModelMemb = new DefaultListModel();
+            for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
+                    if(teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
+                        try {
+                            teamName = RequestsHTTP.user.teams.get(i).getName();
+                            teamSName = RequestsHTTP.user.teams.get(i).getShortName();
+                            teamIndex = i;
+                            
+                            //Populating Team Credentials:
+                            RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
+                            RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
+                            reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                    + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                            RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
+                            reqhttpCred.doTransaction("getteamcreds", i);
+                            for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
+                                tModelCred.addElement(cred.getName());
+                            }
+                            
+                            //Populating Team members:
+                            reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                    + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
+                                    + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                            RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
+                            reqhttpMemb.doTransaction("getteammembers", i);
+                            for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
+                                tModelMemb.addElement(user.getUserFullName());
+                            }
+                            
+                        } catch (UnsupportedEncodingException ex) {
+                            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        break;
+                    }
+                    
+                }
+            bigTeamCredList.setModel(tModelCred);
+            bigTeamMembList.setModel(tModelMemb);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Info: Please select a team.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_teamDetButtonActionPerformed
 
@@ -3287,7 +3444,67 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_editTeamMemButtonActionPerformed
 
     private void editTeamCredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editTeamCredButtonActionPerformed
-        
+        EditFrame ef = new EditFrame();
+        String type;
+        int credOwner = 0;
+        String credname = bigTeamCredList.getSelectedValue();
+        if(credname !=null && !credname.isEmpty()){
+            int size = RequestsHTTP.user.teams.get(teamIndex).teamCreds.size();
+            for (int i = 0; i < size; i++) {
+                if (credname.equals(RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i).getName())) {
+                    credOwner = RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i).getOwnerID();
+                    if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof BankAccountCredential) {
+                        type = "Bank Account";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof CreditCardCredential) {
+                        type = "Credit Card";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof EmailCredential) {
+                        type = "Email";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof LoginCredential) {
+                        type = "Login";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof SoftwareLicenseCredential) {
+                        type = "Software License";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof SocialSecurityCredential) {
+                        type = "SSN";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof WebsiteCredential) {
+                        type = "Website";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof WirelessCredential) {
+                        type = "Wireless";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    } else if (RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i) instanceof CustomCredential) {
+                        type = "Custom";
+                        ef.ShowTeamCredPanel(type, teamIndex, i);
+                        break;
+                    }
+                }
+                
+            }
+            ef.setVisible(true);
+            ef.setDf(this);  
+            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+            ef.setLocation(dim.width / 2 - ef.getSize().width / 2, dim.height / 2 - ef.getSize().height / 2);
+            if(credOwner != RequestsHTTP.user.getUserID()){
+                ef.setSaveEditButton();
+            }
+            this.setEnabled(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please select a credential to edit.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_editTeamCredButtonActionPerformed
 
     private void showIDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showIDButtonActionPerformed
@@ -3681,8 +3898,6 @@ public class DashboardFrame extends javax.swing.JFrame {
         //addCredLP.add(customSP, "card11");
     }//GEN-LAST:event_addFieldButtonActionPerformed
 
-    
-    
     private void gotoTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoTeamButtonActionPerformed
         String teamname = teamNameLabel.getText() + " (" + teamShortNLabel.getText() + ")";
         if(teamname != null && !teamname.isEmpty() && !" ()".equals(teamname)){
@@ -3797,7 +4012,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                     if(selection.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
                         teamName = RequestsHTTP.user.teams.get(i).getName();
                         teamSName = RequestsHTTP.user.teams.get(i).getShortName();
-
+                        teamIndex = i;
+                        
                         //Populating Team Credentials:
                         RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
                         RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
@@ -3820,8 +4036,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                         for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
                             tModelMemb.addElement(user.getUserFullName());
                         }
-
+                        break;
                     }
+                    
                 }
                 teamCredsList.setModel(tModelCred);
                 teamMembList.setModel(tModelMemb);
@@ -3849,7 +4066,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     if(selection.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
                         teamName = RequestsHTTP.user.teams.get(i).getName();
                         teamSName = RequestsHTTP.user.teams.get(i).getShortName();
-
+                        teamIndex = i;
                         //Populating Team Credentials:
                         RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
                         RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
@@ -3872,8 +4089,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                         for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
                             tModelMemb.addElement(user.getUserFullName());
                         }
-
+                        break;
                     }
+                   
                 }
                 teamCredsList.setModel(tModelCred);
                 teamMembList.setModel(tModelMemb);
@@ -3884,6 +4102,11 @@ public class DashboardFrame extends javax.swing.JFrame {
                 Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_teamsTMListMouseReleased
+
+    private void credSearchTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_credSearchTFKeyReleased
+        DefaultListModel lm = CustomModel(credSearchTF.getText());
+        credList.setModel(lm);
+    }//GEN-LAST:event_credSearchTFKeyReleased
 
     //Helper Methods:
     public void SetUserName() {
@@ -3904,6 +4127,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             DefaultListModel<String> model = new DefaultListModel();
             for (int i = 0; i < RequestsHTTP.user.credentials.size(); i++) {
                 model.addElement(RequestsHTTP.user.credentials.get(i).getName());
+                credNames.add(RequestsHTTP.user.credentials.get(i).getName());
             }
             return model;
         } catch (UnsupportedEncodingException ex) {
@@ -4003,6 +4227,27 @@ public class DashboardFrame extends javax.swing.JFrame {
         teamMembList.setModel(new DefaultListModel());
         teamNameLabel.setText("");
         teamShortNLabel.setText("");
+    }
+    
+    private DefaultListModel CustomModel(String filter){
+        DefaultListModel lm = new DefaultListModel();
+        for(int i = 0; i < credNames.size(); i++){
+            if(MeetReq(filter, i)){
+                lm.addElement(credNames.get(i));
+            }
+        }
+        return lm;
+    }
+    
+    private boolean MeetReq(String filter, int i){
+        if(filter == null || filter.length() == 0){
+            return true;
+        }
+        if(filter.length() > credNames.get(i).length()){
+            return false;
+        }
+        String tmp = credNames.get(i).substring(0,filter.length());
+        return filter.equalsIgnoreCase(tmp);
     }
     
     /**
@@ -4163,10 +4408,14 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField fieldCont1;
     private javax.swing.JTextField fieldName1;
     private javax.swing.JTextField firstNameSetTF;
+    private javax.swing.JButton generatePwButton;
     private javax.swing.JButton gotoTeamButton;
     private javax.swing.JButton hideIDButton;
     private javax.swing.JLabel idLabel;
+    private javax.swing.JCheckBox inSymbChB;
+    private javax.swing.JCheckBox incNumbChB;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
@@ -4318,6 +4567,8 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField passwordWeTF;
     private javax.swing.JTextField passwordWiTF;
     private javax.swing.JTextField phNumSetFTF;
+    private javax.swing.JTextField pwGeneratedTF;
+    private javax.swing.JComboBox<String> pwLengthCB;
     private javax.swing.JTextField searchCredManTF;
     private javax.swing.JPanel secSettingsPanel;
     private javax.swing.JButton settingsButton;
@@ -4369,4 +4620,5 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JPanel wirelessPanel;
     // End of variables declaration//GEN-END:variables
 // </editor-fold> // variable declarations
+    
 }

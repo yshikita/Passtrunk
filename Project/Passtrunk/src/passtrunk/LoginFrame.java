@@ -92,6 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
         loginButton.setBackground(new java.awt.Color(64, 138, 201));
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
+        loginButton.setAutoscrolls(true);
         loginButton.setName("loginBttn"); // NOI18N
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

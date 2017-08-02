@@ -633,6 +633,10 @@ public class EditFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_closeEditButtonActionPerformed
 
+    public void setSaveEditButton(){
+        saveEditButton.setEnabled(false);
+    }
+    
     private void saveEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveEditButtonActionPerformed
         try {  
             String uName = RequestsHTTP.user.getUsername();
@@ -880,7 +884,7 @@ public class EditFrame extends javax.swing.JFrame {
                 ssnEditOwnerTF.setText(ssn.getOwnerName());
                 ssnEditNumberTF.setText(ssn.getSsn());
                 break;
-            case "Website Login":
+            case "Website":
                 editBankAcctPanel.setVisible(false);
                 editCredCardPanel.setVisible(false);
                 editEmailPanel.setVisible(false);
@@ -932,7 +936,164 @@ public class EditFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error: Type of credential not valid", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+    public void ShowTeamCredPanel(String panel, int teamIndex, int credPos){
+       // this.pos = pos;
+        credNameTypeLabel.setText(RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos).getName());
+        switch(panel){
+            case "Bank Account":
+                editBankAcctPanel.setVisible(true);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                bank = (BankAccountCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                bEditNameTF.setText(bank.getBankName());
+                bEditUrlTF.setText(bank.getBankUrl());
+                bEditUsernameTF.setText(bank.getUsername());
+                bEditPasswordTF.setText(bank.getPassword());
+                bEditAcctNumTF.setText(bank.getAcctNumber());
+                bEditRoutNumTF.setText(bank.getRoutingNumber());
+                break;
+            case "Credit Card":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(true);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                credCard = (CreditCardCredential)RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                ccEditBankNameTF.setText(credCard.getBankName());
+                ccEditNumberTF.setText(credCard.getCardNumber());
+                ccEditExpDateTF.setText(credCard.getExpDate());
+                ccEditCardOwnerTF.setText(credCard.getNameOnCard());
+                ccEditCcvTF.setText(credCard.getCcvNumber());
+                ccEditTypeTF.setText(credCard.getType());
+                break;
+            case "Email":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(true);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                email = (EmailCredential)RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                eEditLogPageTF.setText(email.getLoginUrl());
+                eEditAddressTF.setText(email.getEmail());
+                eEditPasswordTF.setText(email.getPassword());
+                break;
+            case "Login":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(true);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                login = (LoginCredential)RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                lEditUsernameTF.setText(login.getUsername());
+                lEditPasswordTF.setText(login.getPassword());
+                lEditAssocEmailTF.setText(login.getAcctEmail());
+                break;
+            case "Software License":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(true);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                softl = (SoftwareLicenseCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                slEditSoftNameTF.setText(softl.getSoftwareName());
+                slEditKeyTF.setText(softl.getKey());
+                slEditWebUrlTF.setText(softl.getUrl());
+                slEditExpDateTF.setText(softl.getExpDate());
+                break;
+            case "SSN":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(true);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                ssn = (SocialSecurityCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                ssnEditOwnerTF.setText(ssn.getOwnerName());
+                ssnEditNumberTF.setText(ssn.getSsn());
+                break;
+            case "Website":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(true);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(false);
+                
+                web = (WebsiteCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                weEditAssocEmailTF.setText(web.getEmail());
+                weEditNameTF.setText(web.getWebsiteName());
+                weEditPasswordTF.setText(web.getPassword());
+                weEditUrlTF.setText(web.getUrl());
+                weEditUsernameTF.setText(web.getUsername());
+                break;
+            case "Wireless":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(true);
+                editCustomPanel.setVisible(false);
+                
+                wireless = (WirelessCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                wiEditEncryptionTF.setText(wireless.getEncryption());
+                wiEditNameTF.setText(wireless.getSsid());
+                wiEditPasswordTF.setText(wireless.getPassword());
+                wiEditUsernameTF.setText(wireless.getUsername());
+                break;
+            case "Custom":
+                editBankAcctPanel.setVisible(false);
+                editCredCardPanel.setVisible(false);
+                editEmailPanel.setVisible(false);
+                editLoginPanel.setVisible(false);
+                editSoftLicPanel.setVisible(false);
+                editSsnPanel.setVisible(false);
+                editWebsitePanel.setVisible(false);
+                editWirelessPanel.setVisible(false);
+                editCustomPanel.setVisible(true);
+                
+                cust = (CustomCredential) RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(credPos);
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Error: Type of credential not valid", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * @param args the command line arguments
      */

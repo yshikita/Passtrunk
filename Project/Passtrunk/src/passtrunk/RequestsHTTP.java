@@ -251,7 +251,7 @@ public class RequestsHTTP {
                         credCard.setExpDate(AESEncryptDecrypt.decrypt(credential.getString("expdate"), keyS));
                         credCard.setNameOnCard(AESEncryptDecrypt.decrypt(credential.getString("owner"), keyS));
                         credCard.setCcvNumber(AESEncryptDecrypt.decrypt(credential.getString("ccv"), keyS));
-                        credCard.setType(AESEncryptDecrypt.decrypt(credential.getString("cardtype"), keyS));
+                        credCard.setType(credential.getString("cardtype"));
                         user.credentials.add(credCard);
                         break;
                     case "Email":
@@ -282,7 +282,7 @@ public class RequestsHTTP {
                         softLicCred.setSoftwareName(AESEncryptDecrypt.decrypt(credential.getString("softwarename"), keyS));
                         softLicCred.setKey(AESEncryptDecrypt.decrypt(credential.getString("softwarekey"), keyS));
                         softLicCred.setUrl(AESEncryptDecrypt.decrypt(credential.getString("websiteurl"), keyS));
-                        softLicCred.setExpDate(AESEncryptDecrypt.decrypt(credential.getString("expdate"), keyS));
+                        softLicCred.setExpDate(credential.getString("expdate"));
                         user.credentials.add(softLicCred);
                         break;
                     case "SSN":
@@ -464,7 +464,7 @@ public class RequestsHTTP {
                         softLicCred.setSoftwareName(AESEncryptDecrypt.decrypt(credential.getString("softwarename"), keyS));
                         softLicCred.setKey(AESEncryptDecrypt.decrypt(credential.getString("softwarekey"), keyS));
                         softLicCred.setUrl(AESEncryptDecrypt.decrypt(credential.getString("websiteurl"), keyS));
-                        softLicCred.setExpDate(AESEncryptDecrypt.decrypt(credential.getString("expdate"), keyS));
+                        softLicCred.setExpDate(credential.getString("expdate"));
                         user.teams.get(team).teamCreds.add(softLicCred);
                         break;
                     case "SSN":
