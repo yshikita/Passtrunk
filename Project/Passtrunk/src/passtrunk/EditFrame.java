@@ -770,7 +770,14 @@ public class EditFrame extends javax.swing.JFrame {
                 
             }
             RequestsHTTP reqhttp = new RequestsHTTP(url, "PUT", reqbody);
-            reqhttp.doTransaction("",0);
+            boolean success = reqhttp.doTransaction("",0);
+            if(success){
+                JOptionPane.showMessageDialog(null, "Credential updated.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Error: request type not valid.", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(EditFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {

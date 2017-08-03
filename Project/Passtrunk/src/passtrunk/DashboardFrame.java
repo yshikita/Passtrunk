@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
@@ -25,13 +26,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DashboardFrame extends javax.swing.JFrame {
 
-    ArrayList <JLabel> labelList;
-    ArrayList <JTextField> textFieldList;
+    ArrayList<JLabel> labelList;
+    ArrayList<JTextField> textFieldList;
     int custFieldIndex;
     int teamIndex;
     ArrayList<String> credNames;
     ArrayList<String> teamNames;
-    
+
     /**
      * Creates new form DashboardFrame
      */
@@ -42,8 +43,6 @@ public class DashboardFrame extends javax.swing.JFrame {
         teamNames = new ArrayList();
         initComponents();
     }
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,13 +75,13 @@ public class DashboardFrame extends javax.swing.JFrame {
         credList = new javax.swing.JList<>();
         credSearchTF = new javax.swing.JTextField();
         credEditButton = new javax.swing.JButton();
+        jLabel109 = new javax.swing.JLabel();
         teamsDashPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         teamList = new javax.swing.JList<>();
         teamSearchTF = new javax.swing.JTextField();
         teamEditButton = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        newsFeedEdPane = new javax.swing.JEditorPane();
+        jLabel112 = new javax.swing.JLabel();
         addCredPanel = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         addCredHoldPanel = new javax.swing.JPanel();
@@ -114,10 +113,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         credCCNameTF = new javax.swing.JTextField();
         bankNameCCTF = new javax.swing.JTextField();
         credCardNumTF = new javax.swing.JTextField();
-        expDateCCTF = new javax.swing.JTextField();
         ccvTF = new javax.swing.JTextField();
         nameonCardTF = new javax.swing.JTextField();
-        cardTypeFTF = new javax.swing.JFormattedTextField();
+        cardTypeTF = new javax.swing.JTextField();
+        expDateCCDP = new org.jdesktop.swingx.JXDatePicker();
         emailPanel = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -126,7 +125,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         credNameETF = new javax.swing.JTextField();
         urlEmailLoginTF = new javax.swing.JTextField();
         emailTF = new javax.swing.JTextField();
-        passwordEmTF = new javax.swing.JTextField();
+        passwordEmPF = new javax.swing.JPasswordField();
         loginPanel = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -134,8 +133,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         credNameLTF = new javax.swing.JTextField();
         usernameLogTF = new javax.swing.JTextField();
-        passwordLogTF = new javax.swing.JTextField();
         emailLogTF = new javax.swing.JTextField();
+        passwordLogPF = new javax.swing.JPasswordField();
         softLicPanel = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
@@ -146,7 +145,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         softNameTF = new javax.swing.JTextField();
         softKeyTF = new javax.swing.JTextField();
         urltoSoftTF = new javax.swing.JTextField();
-        expDateSoftFTF = new javax.swing.JFormattedTextField();
+        expDateSoftDP = new org.jdesktop.swingx.JXDatePicker();
         ssnPanel = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -165,8 +164,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         websNameTF = new javax.swing.JTextField();
         urltoWebsTF = new javax.swing.JTextField();
         usernameWeTF = new javax.swing.JTextField();
-        passwordWeTF = new javax.swing.JTextField();
         emailWeTF = new javax.swing.JTextField();
+        passwordWePF = new javax.swing.JPasswordField();
         wirelessPanel = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
@@ -177,7 +176,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         ssidTF = new javax.swing.JTextField();
         encryptionTypeTF = new javax.swing.JTextField();
         usernameWiTF = new javax.swing.JTextField();
-        passwordWiTF = new javax.swing.JTextField();
+        passwordWiPF = new javax.swing.JPasswordField();
         customSP = new javax.swing.JScrollPane();
         customPanel = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
@@ -211,9 +210,9 @@ public class DashboardFrame extends javax.swing.JFrame {
         addBankNameBATF = new javax.swing.JTextField();
         addBankURLTF = new javax.swing.JTextField();
         addBankUsernameTF = new javax.swing.JTextField();
-        addBankPasswordTF = new javax.swing.JTextField();
         addBankAcctNumTF = new javax.swing.JTextField();
         addBankRoutNumTF = new javax.swing.JTextField();
+        addBankPasswordPF = new javax.swing.JPasswordField();
         addCredCardSP = new javax.swing.JScrollPane();
         addCredCardPanel = new javax.swing.JPanel();
         jLabel72 = new javax.swing.JLabel();
@@ -226,10 +225,10 @@ public class DashboardFrame extends javax.swing.JFrame {
         addCredCCNameTF = new javax.swing.JTextField();
         addBankNameCCTF = new javax.swing.JTextField();
         addCredCardNumTF = new javax.swing.JTextField();
-        addExpDateCCTF = new javax.swing.JTextField();
         addCcvTF = new javax.swing.JTextField();
         addNameonCardTF = new javax.swing.JTextField();
         addCardTypeTF = new javax.swing.JTextField();
+        addExpDateCCDP = new org.jdesktop.swingx.JXDatePicker();
         addEmailPanel = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
@@ -238,7 +237,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         addCredNameETF = new javax.swing.JTextField();
         addUrlEmailLoginTF = new javax.swing.JTextField();
         addEmailTF = new javax.swing.JTextField();
-        addPasswordEmTF = new javax.swing.JTextField();
+        addPasswordEmPF = new javax.swing.JPasswordField();
         addLoginPanel = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
@@ -246,8 +245,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         addCredNameLTF = new javax.swing.JTextField();
         addUsernameLogTF = new javax.swing.JTextField();
-        addPasswordLogTF = new javax.swing.JTextField();
         addEmailLogTF = new javax.swing.JTextField();
+        addPasswordLogPF = new javax.swing.JPasswordField();
         addSoftLicPanel = new javax.swing.JPanel();
         jLabel87 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
@@ -258,7 +257,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         addSoftNameTF = new javax.swing.JTextField();
         addSoftKeyTF = new javax.swing.JTextField();
         addUrltoSoftTF = new javax.swing.JTextField();
-        addExpDateSoftTF = new javax.swing.JTextField();
+        addExpDateSoftDP = new org.jdesktop.swingx.JXDatePicker();
         addSsnPanel = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -277,8 +276,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         addWebsNameTF = new javax.swing.JTextField();
         addUrltoWebsTF = new javax.swing.JTextField();
         addUsernameWeTF = new javax.swing.JTextField();
-        addPasswordWeTF = new javax.swing.JTextField();
         addEmailWeTF = new javax.swing.JTextField();
+        addPasswordWePF = new javax.swing.JPasswordField();
         addWirelessPanel = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
@@ -289,7 +288,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         addSsidTF = new javax.swing.JTextField();
         addEncryptionTypeTF = new javax.swing.JTextField();
         addUsernameWiTF = new javax.swing.JTextField();
-        addPasswordWiTF = new javax.swing.JTextField();
+        addPasswordWiPF = new javax.swing.JPasswordField();
         addCustomSP = new javax.swing.JScrollPane();
         addCustomPanel = new javax.swing.JPanel();
         jLabel106 = new javax.swing.JLabel();
@@ -579,33 +578,37 @@ public class DashboardFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel109.setText("Search:");
+
         javax.swing.GroupLayout credsDashPanelLayout = new javax.swing.GroupLayout(credsDashPanel);
         credsDashPanel.setLayout(credsDashPanelLayout);
         credsDashPanelLayout.setHorizontalGroup(
             credsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(credsDashPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(credsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(credsDashPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(credEditButton)
-                        .addGap(25, 25, 25))
-                    .addGroup(credsDashPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(credsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
-                            .addComponent(credSearchTF))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, credsDashPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(credEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, credsDashPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel109, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(credSearchTF)))
                 .addContainerGap())
         );
         credsDashPanelLayout.setVerticalGroup(
             credsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(credsDashPanelLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(credSearchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(credsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(credSearchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel109))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(credEditButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         teamsDashPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Teams"));
@@ -616,8 +619,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(teamList);
 
         teamSearchTF.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                teamSearchTFKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                teamSearchTFKeyReleased(evt);
             }
         });
 
@@ -631,6 +634,8 @@ public class DashboardFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel112.setText("Search:");
+
         javax.swing.GroupLayout teamsDashPanelLayout = new javax.swing.GroupLayout(teamsDashPanel);
         teamsDashPanel.setLayout(teamsDashPanelLayout);
         teamsDashPanelLayout.setHorizontalGroup(
@@ -639,26 +644,28 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(teamsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
-                    .addComponent(teamSearchTF))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, teamsDashPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(teamEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, teamsDashPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel112, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(teamSearchTF)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, teamsDashPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(teamEditButton)
-                .addGap(25, 25, 25))
         );
         teamsDashPanelLayout.setVerticalGroup(
             teamsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(teamsDashPanelLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(teamSearchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(teamsDashPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(teamSearchTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel112))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(teamEditButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
-
-        jScrollPane3.setViewportView(newsFeedEdPane);
 
         javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
         dashboardPanel.setLayout(dashboardPanelLayout);
@@ -666,23 +673,19 @@ public class DashboardFrame extends javax.swing.JFrame {
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(dashboardPanelLayout.createSequentialGroup()
-                        .addComponent(credsDashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(teamsDashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(credsDashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(teamsDashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(credsDashPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(teamsDashPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
+                    .addComponent(teamsDashPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         dashboardMainLP.add(dashboardPanel, "card2");
@@ -786,8 +789,6 @@ public class DashboardFrame extends javax.swing.JFrame {
 
         jLabel34.setText("Type of Card:");
 
-        cardTypeFTF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/YYYY"))));
-
         javax.swing.GroupLayout creditCardPanelLayout = new javax.swing.GroupLayout(creditCardPanel);
         creditCardPanel.setLayout(creditCardPanelLayout);
         creditCardPanelLayout.setHorizontalGroup(
@@ -795,12 +796,10 @@ public class DashboardFrame extends javax.swing.JFrame {
             .addGroup(creditCardPanelLayout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addGroup(creditCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cardTypeFTF, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(nameonCardTF, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ccvTF)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(expDateCCTF)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(credCardNumTF)
@@ -808,7 +807,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(bankNameCCTF)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(credCCNameTF))
+                    .addComponent(credCCNameTF)
+                    .addComponent(cardTypeTF)
+                    .addComponent(expDateCCDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         creditCardPanelLayout.setVerticalGroup(
@@ -829,8 +830,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(expDateCCTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addComponent(expDateCCDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addComponent(jLabel32)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ccvTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -841,8 +842,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cardTypeFTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cardTypeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         addCredLP.add(creditCardPanel, "card3");
@@ -861,15 +862,15 @@ public class DashboardFrame extends javax.swing.JFrame {
             emailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, emailPanelLayout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
-                .addGroup(emailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passwordEmTF, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(urlEmailLoginTF, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(credNameETF, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(emailPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(emailTF, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(urlEmailLoginTF, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(credNameETF, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(passwordEmPF))
                 .addGap(105, 105, 105))
         );
         emailPanelLayout.setVerticalGroup(
@@ -890,7 +891,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel37)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordEmTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordEmPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(197, Short.MAX_VALUE))
         );
 
@@ -916,9 +917,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(usernameLogTF)
                     .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordLogTF)
                     .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(emailLogTF))
+                    .addComponent(emailLogTF)
+                    .addComponent(passwordLogPF))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
@@ -935,8 +936,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordLogTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(passwordLogPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel41)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emailLogTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -955,8 +956,6 @@ public class DashboardFrame extends javax.swing.JFrame {
 
         jLabel46.setText("Expiration Date:");
 
-        expDateSoftFTF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/YYYY"))));
-
         javax.swing.GroupLayout softLicPanelLayout = new javax.swing.GroupLayout(softLicPanel);
         softLicPanel.setLayout(softLicPanelLayout);
         softLicPanelLayout.setHorizontalGroup(
@@ -973,7 +972,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(urltoSoftTF)
                     .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(expDateSoftFTF))
+                    .addComponent(expDateSoftDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         softLicPanelLayout.setVerticalGroup(
@@ -998,8 +997,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel46)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(expDateSoftFTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addComponent(expDateSoftDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         addCredLP.add(softLicPanel, "card6");
@@ -1073,9 +1072,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(usernameWeTF)
                     .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordWeTF)
                     .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(emailWeTF))
+                    .addComponent(emailWeTF)
+                    .addComponent(passwordWePF))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         websitePanelLayout.setVerticalGroup(
@@ -1100,8 +1099,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel54)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordWeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(passwordWePF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel55)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emailWeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1136,7 +1135,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(usernameWiTF)
                     .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(passwordWiTF))
+                    .addComponent(passwordWiPF))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         wirelessPanelLayout.setVerticalGroup(
@@ -1161,7 +1160,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel60)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordWiTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordWiPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(146, Short.MAX_VALUE))
         );
 
@@ -1396,9 +1395,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(addBankNameBATF)
                     .addComponent(addBankURLTF)
                     .addComponent(addBankUsernameTF)
-                    .addComponent(addBankPasswordTF)
                     .addComponent(addBankAcctNumTF)
-                    .addComponent(addBankRoutNumTF, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(addBankRoutNumTF, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addBankPasswordPF))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         addBankAcctPanelLayout.setVerticalGroup(
@@ -1423,8 +1422,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel69)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBankPasswordTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addBankPasswordPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel70)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addBankAcctNumTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1469,13 +1468,13 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(addCredCardNumTF)
                     .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addExpDateCCTF)
                     .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addCcvTF)
                     .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addNameonCardTF)
                     .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addCardTypeTF))
+                    .addComponent(addCardTypeTF)
+                    .addComponent(addExpDateCCDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         addCredCardPanelLayout.setVerticalGroup(
@@ -1496,8 +1495,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel75)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addExpDateCCTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addExpDateCCDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addComponent(jLabel76)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addCcvTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1538,7 +1537,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addEmailTF)
                     .addComponent(jLabel82, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addPasswordEmTF))
+                    .addComponent(addPasswordEmPF))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         addEmailPanelLayout.setVerticalGroup(
@@ -1559,7 +1558,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel82)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addPasswordEmTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addPasswordEmPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(188, Short.MAX_VALUE))
         );
 
@@ -1585,9 +1584,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel84, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addUsernameLogTF)
                     .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addPasswordLogTF)
                     .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(addEmailLogTF))
+                    .addComponent(addEmailLogTF)
+                    .addComponent(addPasswordLogPF))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         addLoginPanelLayout.setVerticalGroup(
@@ -1604,8 +1603,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel85)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addPasswordLogTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addPasswordLogPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel86)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addEmailLogTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1640,7 +1639,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                     .addComponent(addUrltoSoftTF)
                     .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addExpDateSoftTF))
+                    .addComponent(addExpDateSoftDP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         addSoftLicPanelLayout.setVerticalGroup(
@@ -1665,8 +1664,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel91)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addExpDateSoftTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addComponent(addExpDateSoftDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         addCredManLP.add(addSoftLicPanel, "card6");
@@ -1740,9 +1739,9 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addUsernameWeTF)
                     .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addPasswordWeTF)
                     .addComponent(jLabel100, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(addEmailWeTF))
+                    .addComponent(addEmailWeTF)
+                    .addComponent(addPasswordWePF))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         addWebsitePanelLayout.setVerticalGroup(
@@ -1767,8 +1766,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel99)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addPasswordWeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addPasswordWePF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel100)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addEmailWeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1803,7 +1802,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     .addComponent(jLabel104, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addUsernameWiTF)
                     .addComponent(jLabel105, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addPasswordWiTF))
+                    .addComponent(addPasswordWiPF))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         addWirelessPanelLayout.setVerticalGroup(
@@ -1828,7 +1827,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel105)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addPasswordWiTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addPasswordWiPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(137, Short.MAX_VALUE))
         );
 
@@ -2084,7 +2083,6 @@ public class DashboardFrame extends javax.swing.JFrame {
         teamNameDetLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         teamNameDetLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         teamNameDetLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        teamNameDetLabel.setInheritsPopupMenu(false);
 
         jLabel110.setText("Team's Credentials:");
 
@@ -2798,31 +2796,23 @@ public class DashboardFrame extends javax.swing.JFrame {
         tModel.addColumn("Type");
         for (Credential credential : RequestsHTTP.user.credentials) {
             String type = "";
-            if(credential instanceof BankAccountCredential){
+            if (credential instanceof BankAccountCredential) {
                 type = "Bank Account";
-            }
-            else if(credential instanceof CreditCardCredential){
+            } else if (credential instanceof CreditCardCredential) {
                 type = "Credit Card";
-            }
-            else if(credential instanceof EmailCredential){
+            } else if (credential instanceof EmailCredential) {
                 type = "Email";
-            }
-            else if(credential instanceof LoginCredential){
+            } else if (credential instanceof LoginCredential) {
                 type = "Login";
-            }
-            else if(credential instanceof SoftwareLicenseCredential){
+            } else if (credential instanceof SoftwareLicenseCredential) {
                 type = "Software License";
-            }
-            else if(credential instanceof SocialSecurityCredential){
+            } else if (credential instanceof SocialSecurityCredential) {
                 type = "Social Security";
-            }
-            else if(credential instanceof WebsiteCredential){
+            } else if (credential instanceof WebsiteCredential) {
                 type = "Website";
-            }
-            else if(credential instanceof WirelessCredential){
+            } else if (credential instanceof WirelessCredential) {
                 type = "Wireless";
-            }
-            else if(credential instanceof CustomCredential){
+            } else if (credential instanceof CustomCredential) {
                 type = "Custom";
             }
             tModel.addRow(new Object[]{credential.getName(), type});
@@ -2857,9 +2847,9 @@ public class DashboardFrame extends javax.swing.JFrame {
         lastLoginPanel.setVisible(false);
         settingsPanel.setVisible(false);
         custFieldIndex = 0;
-        
+
         PopulateManTeamLists();
-        
+
     }//GEN-LAST:event_teamMngrButtonActionPerformed
 
     //News Feed Button:
@@ -2945,6 +2935,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             websitePanel.setVisible(false);
             wirelessPanel.setVisible(false);
             customSP.setVisible(false);
+            expDateCCDP.setFormats("MM/dd/yyyy");
         } else if (chooseCredCB.getSelectedItem().equals("Email")) {
             addCredLP.setVisible(true);
             bankAcctPanel.setVisible(false);
@@ -2978,6 +2969,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             websitePanel.setVisible(false);
             wirelessPanel.setVisible(false);
             customSP.setVisible(false);
+            expDateSoftDP.setFormats("MM/dd/yyyy");
         } else if (chooseCredCB.getSelectedItem().equals("Social Security Number(SSN)")) {
             addCredLP.setVisible(true);
             bankAcctPanel.setVisible(false);
@@ -3030,7 +3022,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         EditFrame ef = new EditFrame();
         String type;
         String credname = credList.getSelectedValue();
-        if(credname !=null && !credname.isEmpty()){
+        if (credname != null && !credname.isEmpty()) {
             int size = RequestsHTTP.user.credentials.size();
             for (int i = 0; i < size; i++) {
                 if (credname.equals(RequestsHTTP.user.credentials.get(i).getName())) {
@@ -3072,27 +3064,22 @@ public class DashboardFrame extends javax.swing.JFrame {
                         break;
                     }
                 }
-                break;
+
             }
             ef.setVisible(true);
             ef.setDf(this);
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             ef.setLocation(dim.width / 2 - ef.getSize().width / 2, dim.height / 2 - ef.getSize().height / 2);
             this.setEnabled(false);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Please select a credential to edit.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_credEditButtonActionPerformed
-
-    private void teamSearchTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_teamSearchTFKeyTyped
-
-    }//GEN-LAST:event_teamSearchTFKeyTyped
 
     private void teamEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamEditButtonActionPerformed
         String teamname = teamList.getSelectedValue();
-        if(teamname !=null && !teamname.isEmpty() && !" ()".equals(teamname)){
+        if (teamname != null && !teamname.isEmpty() && !" ()".equals(teamname)) {
             DefaultListModel tModelCred = new DefaultListModel();
             DefaultListModel tModelMemb = new DefaultListModel();
             String teamName = "";
@@ -3100,32 +3087,32 @@ public class DashboardFrame extends javax.swing.JFrame {
             String urlCred = "https://passtrunk.com/api/credential/team";
             String urlMemb = "https://passtrunk.com/api/team/members";
             String reqbody;
-            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-                if(teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
+            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+                if (teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")) {
                     try {
                         teamName = RequestsHTTP.user.teams.get(i).getName();
                         teamSName = RequestsHTTP.user.teams.get(i).getShortName();
                         RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
                         RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
-                        
+
                         //Populating Team Credentials:
                         reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                                + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
                         RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
                         reqhttpCred.doTransaction("getteamcreds", i);
-                        for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
+                        for (Credential cred : RequestsHTTP.user.teams.get(i).teamCreds) {
                             tModelCred.addElement(cred.getName());
                         }
-                        
+
                         //Populating Team members:
                         reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
                                 + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                                + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
                         RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
                         reqhttpMemb.doTransaction("getteammembers", i);
-                        for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
+                        for (User user : RequestsHTTP.user.teams.get(i).teamMembers) {
                             tModelMemb.addElement(user.getUserFullName());
                         }
                         break;
@@ -3146,8 +3133,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             newsFeedPanel.setVisible(false);
             lastLoginPanel.setVisible(false);
             settingsPanel.setVisible(false);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Info: Please select a team.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_teamEditButtonActionPerformed
@@ -3158,7 +3144,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         String reqbody = "";
         String uName = RequestsHTTP.user.getUsername();
         String uToken = RequestsHTTP.user.getToken();
-        String key = uName.substring(0, 2) + uToken.substring(0,5) + uName.substring(2) + uToken.substring(5);
+        String key = uName.substring(0, 2) + uToken.substring(0, 5) + uName.substring(2) + uToken.substring(5);
         try {
             switch (selection) {
                 case "Choose Credential":
@@ -3193,38 +3179,43 @@ public class DashboardFrame extends javax.swing.JFrame {
                     bankRoutNumTF.setText("");
                     break;
                 case "Credit Card":
+
                     //Checking all fields are filled
                     if (credCCNameTF.getText().isEmpty() || bankNameCCTF.getText().isEmpty()
-                            || credCardNumTF.getText().isEmpty() || expDateCCTF.getText().isEmpty()
+                            || credCardNumTF.getText().isEmpty() || expDateCCDP.getDate() == null
                             || ccvTF.getText().isEmpty() || nameonCardTF.getText().isEmpty()
-                            || cardTypeFTF.getText().isEmpty()) {
+                            || cardTypeTF.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
+
+                        String temp = expDateCCDP.getDate().toString();
+                        temp = temp.substring(3);
+                        String expDate = temp.substring(0, 7) + temp.substring(20, temp.length());
+
                         url = "https://passtrunk.com/api/credential/creditcard";
                         reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
                                 + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(credCCNameTF.getText(), "UTF-8").replace("+", "%20")
                                 + "&" + URLEncoder.encode("bankname", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(bankNameCCTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("creditcardnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(credCardNumTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(expDateCCTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(expDate, key), "UTF-8")
                                 + "&" + URLEncoder.encode("ccv", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(ccvTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("owner", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(nameonCardTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(cardTypeFTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(cardTypeTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
                     //Emptying all fields
                     credCCNameTF.setText("");
                     bankNameCCTF.setText("");
                     credCardNumTF.setText("");
-                    expDateCCTF.setText("");
+                    expDateCCDP.setDate(null);
                     ccvTF.setText("");
                     nameonCardTF.setText("");
-                    cardTypeFTF.setText("");
+                    cardTypeTF.setText("");
                     break;
                 case "Email":
                     //Checking all fields are filled
                     if (credNameETF.getText().isEmpty() || urlEmailLoginTF.getText().isEmpty()
-                            || emailTF.getText().isEmpty() || passwordEmTF.getText().isEmpty())
-                    {
+                            || emailTF.getText().isEmpty() || passwordEmPF.getPassword().length == 0) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         url = "https://passtrunk.com/api/credential/email";
@@ -3232,52 +3223,53 @@ public class DashboardFrame extends javax.swing.JFrame {
                                 + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(credNameETF.getText(), "UTF-8").replace("+", "%20")
                                 + "&" + URLEncoder.encode("loginurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(urlEmailLoginTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("emailaddress", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(emailTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(passwordEmTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(passwordEmPF.getPassword()), key), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
                     //Emptying all fields
-                    credNameLTF.setText("");
-                    usernameLogTF.setText("");
-                    emailLogTF.setText("");
-                    passwordLogTF.setText("");
+                    credNameETF.setText("");
+                    urlEmailLoginTF.setText("");
+                    emailTF.setText("");
+                    passwordEmPF.setText("");
                     break;
                 case "Login":
                     //Checking all fields are filled
                     if (credNameLTF.getText().isEmpty() || usernameLogTF.getText().isEmpty()
-                            || emailLogTF.getText().isEmpty() || passwordLogTF.getText().isEmpty())
-                    {
+                            || emailLogTF.getText().isEmpty() || passwordLogPF.getPassword().length == 0) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         url = "https://passtrunk.com/api/credential/login";
                         reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
                                 + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(credNameLTF.getText(), "UTF-8").replace("+", "%20")
                                 + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(usernameLogTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(passwordLogTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(passwordLogPF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("assocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(emailLogTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
                     //Emptying all fields
                     credNameSLTF.setText("");
-                    softNameTF.setText("");
-                    softKeyTF.setText("");
-                    urltoSoftTF.setText("");
-                    expDateSoftFTF.setText("");
+                    usernameLogTF.setText("");
+                    emailLogTF.setText("");
+                    passwordLogPF.setText("");
                     break;
                 case "Software License":
                     //Checking all fields are filled
                     if (credNameSLTF.getText().isEmpty() || softNameTF.getText().isEmpty()
                             || softKeyTF.getText().isEmpty() || urltoSoftTF.getText().isEmpty()
-                            || expDateSoftFTF.getText().isEmpty())
-                    {
+                            || expDateSoftDP.getDate() == null) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
+                        String temp = expDateSoftDP.getDate().toString();
+                        temp = temp.substring(3);
+                        String expDate = temp.substring(0, 7) + temp.substring(20, temp.length());
+
                         url = "https://passtrunk.com/api/credential/softwarelicense";
                         reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
                                 + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(credNameSLTF.getText(), "UTF-8").replace("+", "%20")
                                 + "&" + URLEncoder.encode("softwarename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(softNameTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("softwarekey", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(softKeyTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(urltoSoftTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(expDateSoftFTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(expDate, "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
                     //Emptying all fields
@@ -3285,13 +3277,12 @@ public class DashboardFrame extends javax.swing.JFrame {
                     softNameTF.setText("");
                     softKeyTF.setText("");
                     urltoSoftTF.setText("");
-                    expDateSoftFTF.setText("");
+                    expDateSoftDP.setDate(null);
                     break;
                 case "Social Security Number(SSN)":
                     //Checking all fields are filled
                     if (credNameSSNTF.getText().isEmpty() || nameonSSTF.getText().isEmpty()
-                            || ssnumTF.getText().isEmpty() )
-                    {
+                            || ssnumTF.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         url = "https://passtrunk.com/api/credential/ssn";
@@ -3310,8 +3301,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     //Checking all fields are filled
                     if (credNameWeTF.getText().isEmpty() || websNameTF.getText().isEmpty()
                             || urltoWebsTF.getText().isEmpty() || usernameWeTF.getText().isEmpty()
-                            || passwordWeTF.getText().isEmpty() || emailWeTF.getText().isEmpty())
-                    {
+                            || passwordWePF.getPassword().length == 0 || emailWeTF.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         url = "https://passtrunk.com/api/credential/website";
@@ -3320,7 +3310,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                                 + "&" + URLEncoder.encode("websitename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(websNameTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(urltoWebsTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("websiteusername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(usernameWeTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("websitepassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(passwordWeTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websitepassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(passwordWePF.getPassword()), key), "UTF-8")
                                 + "&" + URLEncoder.encode("websiteassocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(emailWeTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
@@ -3329,15 +3319,14 @@ public class DashboardFrame extends javax.swing.JFrame {
                     websNameTF.setText("");
                     urltoWebsTF.setText("");
                     usernameWeTF.setText("");
-                    passwordWeTF.setText("");
+                    passwordWePF.setText("");
                     emailWeTF.setText("");
                     break;
                 case "Wireless":
                     //Checking all fields are filled
                     if (credNameWiTF.getText().isEmpty() || ssidTF.getText().isEmpty()
                             || encryptionTypeTF.getText().isEmpty() || usernameWiTF.getText().isEmpty()
-                            || passwordWiTF.getText().isEmpty())
-                    {
+                            || passwordWiPF.getPassword().length == 0) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         url = "https://passtrunk.com/api/credential/wireless";
@@ -3346,7 +3335,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                                 + "&" + URLEncoder.encode("ssid", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(ssidTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("encryption", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(encryptionTypeTF.getText(), key), "UTF-8")
                                 + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(usernameWiTF.getText(), key), "UTF-8")
-                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(passwordWiTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(passwordWiPF.getPassword()), key), "UTF-8")
                                 + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
                     }
                     //Emptying all fields
@@ -3354,17 +3343,22 @@ public class DashboardFrame extends javax.swing.JFrame {
                     ssidTF.setText("");
                     encryptionTypeTF.setText("");
                     usernameWiTF.setText("");
-                    passwordWiTF.setText("");
+                    passwordWiPF.setText("");
                     break;
                 case "Custom":
-                    
+
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Error: No such credential exists.", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
                     break;
             }
             RequestsHTTP reqhttp = new RequestsHTTP(url, "POST", reqbody);
-            reqhttp.doTransaction("",0);
+            boolean success = reqhttp.doTransaction("", 0);
+            if (success) {
+                JOptionPane.showMessageDialog(null, "Credential added successfully.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error: There was a problem, credential was not added.", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -3375,7 +3369,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     //Edit team button from Teams Panel
     private void teamDetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamDetButtonActionPerformed
         String teamname = teamTeamsList.getSelectedValue();
-        if(teamname !=null && !teamname.isEmpty()){
+        if (teamname != null && !teamname.isEmpty()) {
             teamsPanel.setVisible(false);
             teamDetailBigPanel.setVisible(true);
             dashboardPanel.setVisible(false);
@@ -3386,7 +3380,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             lastLoginPanel.setVisible(false);
             settingsPanel.setVisible(false);
             teamNameDetLabel.setText(teamname);
-            
+
             String teamName = "";
             String teamSName = "";
             String urlCred = "https://passtrunk.com/api/credential/team";
@@ -3394,53 +3388,52 @@ public class DashboardFrame extends javax.swing.JFrame {
             String reqbody;
             DefaultListModel tModelCred = new DefaultListModel();
             DefaultListModel tModelMemb = new DefaultListModel();
-            for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-                    if(teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
-                        try {
-                            teamName = RequestsHTTP.user.teams.get(i).getName();
-                            teamSName = RequestsHTTP.user.teams.get(i).getShortName();
-                            teamIndex = i;
-                            
-                            //Populating Team Credentials:
-                            RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
-                            RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
-                            reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                    + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                            RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
-                            reqhttpCred.doTransaction("getteamcreds", i);
-                            for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
-                                tModelCred.addElement(cred.getName());
-                            }
-                            
-                            //Populating Team members:
-                            reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                    + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
-                                    + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                            RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
-                            reqhttpMemb.doTransaction("getteammembers", i);
-                            for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
-                                tModelMemb.addElement(user.getUserFullName());
-                            }
-                            
-                        } catch (UnsupportedEncodingException ex) {
-                            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+                if (teamname.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")) {
+                    try {
+                        teamName = RequestsHTTP.user.teams.get(i).getName();
+                        teamSName = RequestsHTTP.user.teams.get(i).getShortName();
+                        teamIndex = i;
+
+                        //Populating Team Credentials:
+                        RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
+                        RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                        RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
+                        reqhttpCred.doTransaction("getteamcreds", i);
+                        for (Credential cred : RequestsHTTP.user.teams.get(i).teamCreds) {
+                            tModelCred.addElement(cred.getName());
                         }
-                        break;
+
+                        //Populating Team members:
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
+                                + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                        RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
+                        reqhttpMemb.doTransaction("getteammembers", i);
+                        for (User user : RequestsHTTP.user.teams.get(i).teamMembers) {
+                            tModelMemb.addElement(user.getUserFullName());
+                        }
+
+                    } catch (UnsupportedEncodingException ex) {
+                        Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+                    break;
                 }
+
+            }
             bigTeamCredList.setModel(tModelCred);
             bigTeamMembList.setModel(tModelMemb);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Info: Please select a team.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_teamDetButtonActionPerformed
 
     private void editTeamMemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editTeamMemButtonActionPerformed
-        
+
     }//GEN-LAST:event_editTeamMemButtonActionPerformed
 
     private void editTeamCredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editTeamCredButtonActionPerformed
@@ -3448,7 +3441,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         String type;
         int credOwner = 0;
         String credname = bigTeamCredList.getSelectedValue();
-        if(credname !=null && !credname.isEmpty()){
+        if (credname != null && !credname.isEmpty()) {
             int size = RequestsHTTP.user.teams.get(teamIndex).teamCreds.size();
             for (int i = 0; i < size; i++) {
                 if (credname.equals(RequestsHTTP.user.teams.get(teamIndex).teamCreds.get(i).getName())) {
@@ -3491,18 +3484,17 @@ public class DashboardFrame extends javax.swing.JFrame {
                         break;
                     }
                 }
-                
+
             }
             ef.setVisible(true);
-            ef.setDf(this);  
+            ef.setDf(this);
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             ef.setLocation(dim.width / 2 - ef.getSize().width / 2, dim.height / 2 - ef.getSize().height / 2);
-            if(credOwner != RequestsHTTP.user.getUserID()){
+            if (credOwner != RequestsHTTP.user.getUserID()) {
                 ef.setSaveEditButton();
             }
             this.setEnabled(false);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Please select a credential to edit.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_editTeamCredButtonActionPerformed
@@ -3521,17 +3513,17 @@ public class DashboardFrame extends javax.swing.JFrame {
 
     private void updateSetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSetButtonActionPerformed
         //settings data:
-        int comMethod = comMethSetCB.getSelectedIndex()+1;
-        int twoStepDel  = twoStepADelCB.getSelectedIndex()+1;
+        int comMethod = comMethSetCB.getSelectedIndex() + 1;
+        int twoStepDel = twoStepADelCB.getSelectedIndex() + 1;
         String timeOut = timeOutSetTF.getText();
         boolean twoStepEn = enTwoVerSetChB.isSelected();
-        
+
         //user data:
         String email = emailSetTF.getText();
         String phone = phNumSetFTF.getText();
-        
+
         //request data:
-        String url;        
+        String url;
         String reqbody;
         try {
             //updating settings:
@@ -3541,15 +3533,15 @@ public class DashboardFrame extends javax.swing.JFrame {
                     + "&" + URLEncoder.encode("twostepdelivery", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(twoStepDel), "UTF-8")
                     + "&" + URLEncoder.encode("timeout", "UTF-8") + "=" + URLEncoder.encode(timeOut, "UTF-8")
                     + "&" + URLEncoder.encode("visibilityauth", "UTF-8") + "=" + URLEncoder.encode("0", "UTF-8")
-                    + "&" + URLEncoder.encode("twostepenabled", "UTF-8") + "=" + URLEncoder.encode(String.valueOf((twoStepEn == true)? 1:0), "UTF-8")
+                    + "&" + URLEncoder.encode("twostepenabled", "UTF-8") + "=" + URLEncoder.encode(String.valueOf((twoStepEn == true) ? 1 : 0), "UTF-8")
                     + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
             RequestsHTTP reqhttp = new RequestsHTTP(url, "PUT", reqbody);
-            reqhttp.doTransaction("getsettings",0);
+            reqhttp.doTransaction("getsettings", 0);
             RequestsHTTP.user.settings.setComMethod(comMethod);
             RequestsHTTP.user.settings.setTwoStepDelivery(twoStepDel);
             RequestsHTTP.user.settings.setTimeOut(Integer.valueOf(timeOut));
             RequestsHTTP.user.settings.setTwoStepEnabled(twoStepEn);
-            
+
             //updating user:
             url = "https://passtrunk.com/api/user/user";
             reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
@@ -3557,7 +3549,7 @@ public class DashboardFrame extends javax.swing.JFrame {
                     + "&" + URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(phone, "UTF-8")
                     + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
             reqhttp = new RequestsHTTP(url, "PUT", reqbody);
-            reqhttp.doTransaction("",0);
+            reqhttp.doTransaction("", 0);
             RequestsHTTP.user.setEmail(email);
             RequestsHTTP.user.setPhNumber(phone);
             PopulateSettings();
@@ -3573,162 +3565,203 @@ public class DashboardFrame extends javax.swing.JFrame {
         String reqbody = "";
         String uName = RequestsHTTP.user.getUsername();
         String uToken = RequestsHTTP.user.getToken();
-        String key = uName.substring(0, 2) + uToken.substring(0,5) + uName.substring(2) + uToken.substring(5);
+        String key = uName.substring(0, 2) + uToken.substring(0, 5) + uName.substring(2) + uToken.substring(5);
         try {
             switch (selection) {
                 case "Choose Credential":
-                JOptionPane.showMessageDialog(null, "Please select a credential to add.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                break;
+                    JOptionPane.showMessageDialog(null, "Please select a credential to add.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    break;
                 case "Bank Account":
-                //Checking all fields are filled
-                if (addCredBANameTF.getText().isEmpty() || addBankNameBATF.getText().isEmpty()
-                    || addBankURLTF.getText().isEmpty() || addBankUsernameTF.getText().isEmpty()
-                    || addBankPasswordTF.getText().isEmpty() || addBankAcctNumTF.getText().isEmpty()
-                    || addBankRoutNumTF.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/bankaccount";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredBANameTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("bankname", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankNameBATF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("bankurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankURLTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("bankusername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankUsernameTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("bankpassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankPasswordTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("routingnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankAcctNumTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("accountnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankRoutNumTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredBANameTF.getText().isEmpty() || addBankNameBATF.getText().isEmpty()
+                            || addBankURLTF.getText().isEmpty() || addBankUsernameTF.getText().isEmpty()
+                            || addBankPasswordPF.getPassword().length == 0 || addBankAcctNumTF.getText().isEmpty()
+                            || addBankRoutNumTF.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/bankaccount";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredBANameTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("bankname", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankNameBATF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("bankurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankURLTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("bankusername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankUsernameTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("bankpassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(addBankPasswordPF.getPassword()), key), "UTF-8")
+                                + "&" + URLEncoder.encode("routingnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankAcctNumTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("accountnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankRoutNumTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredBANameTF.setText("");
+                    addBankNameBATF.setText("");
+                    addBankURLTF.setText("");
+                    addBankUsernameTF.setText("");
+                    addBankPasswordPF.setText("");
+                    addBankAcctNumTF.setText("");
+                    addBankRoutNumTF.setText("");                            
+                    break;
                 case "Credit Card":
-                //Checking all fields are filled
-                if (addCredCCNameTF.getText().isEmpty() || addBankNameCCTF.getText().isEmpty()
-                    || addCredCardNumTF.getText().isEmpty() || addExpDateCCTF.getText().isEmpty()
-                    || addCcvTF.getText().isEmpty() || addNameonCardTF.getText().isEmpty()
-                    || addCardTypeTF.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/creditcard";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredCCNameTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("bankname", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankNameCCTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("creditcardnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCredCardNumTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addExpDateCCTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("ccv", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCcvTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("owner", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addNameonCardTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCardTypeTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredCCNameTF.getText().isEmpty() || addBankNameCCTF.getText().isEmpty()
+                            || addCredCardNumTF.getText().isEmpty() || addExpDateCCDP.getDate() == null
+                            || addCcvTF.getText().isEmpty() || addNameonCardTF.getText().isEmpty()
+                            || addCardTypeTF.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        String temp = addExpDateCCDP.getDate().toString();
+                        temp = temp.substring(3);
+                        String expDate = temp.substring(0, 7) + temp.substring(20, temp.length());
+                        url = "https://passtrunk.com/api/credential/creditcard";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredCCNameTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("bankname", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addBankNameCCTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("creditcardnumber", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCredCardNumTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(expDate, key), "UTF-8")
+                                + "&" + URLEncoder.encode("ccv", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCcvTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("owner", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addNameonCardTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addCardTypeTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredCCNameTF.setText("");
+                    addBankNameCCTF.setText("");
+                    addCredCardNumTF.setText("");
+                    addExpDateCCDP.setDate(null);
+                    addCcvTF.setText("");
+                    addNameonCardTF.setText("");
+                    addCardTypeTF.setText("");
+                    break;
                 case "Email":
-                //Checking all fields are filled
-                if (addCredNameETF.getText().isEmpty() || addUrlEmailLoginTF.getText().isEmpty()
-                    || addEmailTF.getText().isEmpty() || addPasswordEmTF.getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/email";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameETF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("loginurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrlEmailLoginTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("emailaddress", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addPasswordEmTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameETF.getText().isEmpty() || addUrlEmailLoginTF.getText().isEmpty()
+                            || addEmailTF.getText().isEmpty() || addPasswordEmPF.getPassword().length == 0) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/email";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameETF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("loginurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrlEmailLoginTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("emailaddress", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(addPasswordEmPF.getPassword()), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameETF.setText("");
+                    addUrlEmailLoginTF.setText("");
+                    addEmailTF.setText("");
+                    addPasswordEmPF.setText("");
+                    break;
                 case "Login":
-                //Checking all fields are filled
-                if (addCredNameLTF.getText().isEmpty() || addUsernameLogTF.getText().isEmpty()
-                    || addEmailLogTF.getText().isEmpty() || addPasswordLogTF.getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/login";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameLTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameLogTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addPasswordLogTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("assocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailLogTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameLTF.getText().isEmpty() || addUsernameLogTF.getText().isEmpty()
+                            || addEmailLogTF.getText().isEmpty() || addPasswordLogPF.getPassword().length == 0) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/login";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameLTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameLogTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(addPasswordLogPF.getPassword()), key), "UTF-8")
+                                + "&" + URLEncoder.encode("assocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailLogTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameLTF.setText("");
+                    addUsernameLogTF.setText("");
+                    addEmailLogTF.setText("");
+                    addPasswordLogPF.setText("");
+                    break;
                 case "Software License":
-                //Checking all fields are filled
-                if (addCredNameSLTF.getText().isEmpty() || addSoftNameTF.getText().isEmpty()
-                    || addSoftKeyTF.getText().isEmpty() || addUrltoSoftTF.getText().isEmpty()
-                    || addExpDateSoftTF.getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/softwarelicense";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameSLTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("softwarename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSoftNameTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("softwarekey", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSoftKeyTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrltoSoftTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addExpDateSoftTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameSLTF.getText().isEmpty() || addSoftNameTF.getText().isEmpty()
+                            || addSoftKeyTF.getText().isEmpty() || addUrltoSoftTF.getText().isEmpty()
+                            || addExpDateSoftDP.getDate() == null) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        String temp = addExpDateSoftDP.getDate().toString();
+                        temp = temp.substring(3);
+                        String expDate = temp.substring(0, 7) + temp.substring(20, temp.length());
+                        url = "https://passtrunk.com/api/credential/softwarelicense";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameSLTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("softwarename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSoftNameTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("softwarekey", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSoftKeyTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrltoSoftTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("expdate", "UTF-8") + "=" + URLEncoder.encode(expDate, "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameSLTF.setText("");
+                    addSoftNameTF.setText("");
+                    addSoftKeyTF.setText("");
+                    addUrltoSoftTF.setText("");
+                    addExpDateSoftDP.setDate(null);
+                    break;
                 case "Social Security Number(SSN)":
-                //Checking all fields are filled
-                if (addCredNameSSNTF.getText().isEmpty() || addNameonSSTF.getText().isEmpty()
-                    || addSsnumTF.getText().isEmpty() )
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/ssn";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameSSNTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("ownername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addNameonSSTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("ssn", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSsnumTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameSSNTF.getText().isEmpty() || addNameonSSTF.getText().isEmpty()
+                            || addSsnumTF.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/ssn";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameSSNTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("ownername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addNameonSSTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("ssn", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSsnumTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameSSNTF.setText("");
+                    addNameonSSTF.setText("");
+                    addSsnumTF.setText("");
+                    break;
                 case "Website":
-                //Checking all fields are filled
-                if (addCredNameWeTF.getText().isEmpty() || addWebsNameTF.getText().isEmpty()
-                    || addUrltoWebsTF.getText().isEmpty() || addUsernameWeTF.getText().isEmpty()
-                    || addPasswordWeTF.getText().isEmpty() || addEmailWeTF.getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/website";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameWeTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("websitename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addWebsNameTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrltoWebsTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("websiteusername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameWeTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("websitepassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addPasswordWeTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("websiteassocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailWeTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameWeTF.getText().isEmpty() || addWebsNameTF.getText().isEmpty()
+                            || addUrltoWebsTF.getText().isEmpty() || addUsernameWeTF.getText().isEmpty()
+                            || addPasswordWePF.getPassword().length == 0 || addEmailWeTF.getText().isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/website";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameWeTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("websitename", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addWebsNameTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websiteurl", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUrltoWebsTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websiteusername", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameWeTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websitepassword", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(addPasswordWePF.getPassword()), key), "UTF-8")
+                                + "&" + URLEncoder.encode("websiteassocemail", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEmailWeTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameWeTF.setText("");
+                    addWebsNameTF.setText("");
+                    addUrltoWebsTF.setText("");
+                    addUsernameWeTF.setText("");
+                    addPasswordWePF.setText("");
+                    addEmailWeTF.setText("");
+                    break;
                 case "Wireless":
-                //Checking all fields are filled
-                if (addCredNameWiTF.getText().isEmpty() || addSsidTF.getText().isEmpty()
-                    || addEncryptionTypeTF.getText().isEmpty() || addUsernameWiTF.getText().isEmpty()
-                    || addPasswordWiTF.getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    url = "https://passtrunk.com/api/credential/wireless";
-                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
-                    + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameWiTF.getText(), "UTF-8").replace("+", "%20")
-                    + "&" + URLEncoder.encode("ssid", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSsidTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("encryption", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEncryptionTypeTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameWiTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addPasswordWiTF.getText(), key), "UTF-8")
-                    + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-                }
-                break;
+                    //Checking all fields are filled
+                    if (addCredNameWiTF.getText().isEmpty() || addSsidTF.getText().isEmpty()
+                            || addEncryptionTypeTF.getText().isEmpty() || addUsernameWiTF.getText().isEmpty()
+                            || addPasswordWiPF.getPassword().length == 0) {
+                        JOptionPane.showMessageDialog(null, "Please fill out all fields.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        url = "https://passtrunk.com/api/credential/wireless";
+                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
+                                + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(addCredNameWiTF.getText(), "UTF-8").replace("+", "%20")
+                                + "&" + URLEncoder.encode("ssid", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addSsidTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("encryption", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addEncryptionTypeTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(addUsernameWiTF.getText(), key), "UTF-8")
+                                + "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(AESEncryptDecrypt.encrypt(String.valueOf(addPasswordWiPF.getPassword()), key), "UTF-8")
+                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
+                    }
+                    addCredNameWiTF.setText("");
+                    addSsidTF.setText("");
+                    addEncryptionTypeTF.setText("");
+                    addUsernameWiTF.setText("");
+                    addPasswordWiPF.setText("");
+                    break;
                 case "Custom":
-                break;
+                    break;
                 default:
-                JOptionPane.showMessageDialog(null, "Error: No such credential exists.", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
-                break;
+                    JOptionPane.showMessageDialog(null, "Error: No such credential exists.", "ErrorBox: ", JOptionPane.ERROR_MESSAGE);
+                    break;
             }
             RequestsHTTP reqhttp = new RequestsHTTP(url, "POST", reqbody);
-            reqhttp.doTransaction("",0);
+            reqhttp.doTransaction("", 0);
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -3761,6 +3794,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             addWebsitePanel.setVisible(false);
             addWirelessPanel.setVisible(false);
             addCustomSP.setVisible(false);
+            addExpDateCCDP.setFormats("MM/dd/yyy");
         } else if (addChooseCredCB.getSelectedItem().equals("Email")) {
             addCredManLP.setVisible(true);
             addBankAcctSP.setVisible(false);
@@ -3794,6 +3828,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             addWebsitePanel.setVisible(false);
             addWirelessPanel.setVisible(false);
             addCustomSP.setVisible(false);
+            addExpDateSoftDP.setFormats("MM/dd/yyy");
         } else if (addChooseCredCB.getSelectedItem().equals("Social Security Number(SSN)")) {
             addCredManLP.setVisible(true);
             addBankAcctSP.setVisible(false);
@@ -3843,7 +3878,7 @@ public class DashboardFrame extends javax.swing.JFrame {
 
     //Add field from cred manager custom credential.
     private void addFieldCustButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFieldCustButtonActionPerformed
-        
+
     }//GEN-LAST:event_addFieldCustButtonActionPerformed
 
     //add field from add credential panel.
@@ -3854,43 +3889,43 @@ public class DashboardFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout customPanelLayout = new javax.swing.GroupLayout(customPanel);
         customPanel.setLayout(customPanelLayout);
         customPanelLayout.setHorizontalGroup(
-            customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(customPanelLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(credNameCustTF)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jLabelAdd1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fieldContTF2)
-                    .addComponent(addFieldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(customPanelLayout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addGroup(customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                                        .addComponent(credNameCustTF)
+                                        .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField1)
+                                        .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField2)
+                                        .addComponent(jLabelAdd1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(fieldContTF2)
+                                        .addComponent(addFieldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(104, Short.MAX_VALUE))
         );
         customPanelLayout.setVerticalGroup(
-            customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(customPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel61)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(credNameCustTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel62)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel63)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelAdd1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldContTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addFieldButton)
-                .addContainerGap((205 - jLabelAdd1.getHeight() - fieldContTF2.getHeight() - 11 - 6 - 18 - addFieldButton.getHeight()), Short.MAX_VALUE))
+                customPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(customPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel61)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(credNameCustTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel62)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel63)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelAdd1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(fieldContTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(addFieldButton)
+                                .addContainerGap((205 - jLabelAdd1.getHeight() - fieldContTF2.getHeight() - 11 - 6 - 18 - addFieldButton.getHeight()), Short.MAX_VALUE))
         );
 
         customSP.setViewportView(customPanel);
@@ -3900,7 +3935,7 @@ public class DashboardFrame extends javax.swing.JFrame {
 
     private void gotoTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoTeamButtonActionPerformed
         String teamname = teamNameLabel.getText() + " (" + teamShortNLabel.getText() + ")";
-        if(teamname != null && !teamname.isEmpty() && !" ()".equals(teamname)){
+        if (teamname != null && !teamname.isEmpty() && !" ()".equals(teamname)) {
             dashboardPanel.setVisible(false);
             addCredPanel.setVisible(false);
             credMngrPanel.setVisible(false);
@@ -3913,24 +3948,23 @@ public class DashboardFrame extends javax.swing.JFrame {
             teamNameDetLabel.setText(teamname);
             DefaultListModel tModelCred = new DefaultListModel();
             DefaultListModel tModelMemb = new DefaultListModel();
-            for (Team team: RequestsHTTP.user.teams){
-                if(teamname.equals(team.getName() + " (" + team.getShortName() + ")")){
-                    
+            for (Team team : RequestsHTTP.user.teams) {
+                if (teamname.equals(team.getName() + " (" + team.getShortName() + ")")) {
+
                     //Populating Team Credentials:
-                    for(Credential cred: team.teamCreds){
+                    for (Credential cred : team.teamCreds) {
                         tModelCred.addElement(cred.getName());
                     }
-                    
+
                     //Populating Team members:
-                    for(User user: team.teamMembers){
+                    for (User user : team.teamMembers) {
                         tModelMemb.addElement(user.getUserFullName());
                     }
                 }
             }
             bigTeamCredList.setModel(tModelCred);
             bigTeamMembList.setModel(tModelMemb);
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Info: Please select a team.", "InfoBox: ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_gotoTeamButtonActionPerformed
@@ -3938,8 +3972,8 @@ public class DashboardFrame extends javax.swing.JFrame {
     private void addTeamCredButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamCredButtonActionPerformed
         AddCredToTeam addCred = new AddCredToTeam();
         addCred.setDashboard(this);
-        for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-            if(teamNameLabel.getText().equals(RequestsHTTP.user.teams.get(i).getName())){
+        for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+            if (teamNameLabel.getText().equals(RequestsHTTP.user.teams.get(i).getName())) {
                 addCred.setTeamIndex(i);
                 break;
             }
@@ -3954,8 +3988,8 @@ public class DashboardFrame extends javax.swing.JFrame {
     private void addTeamMembButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeamMembButtonActionPerformed
         AddMembToTeam addMemb = new AddMembToTeam();
         addMemb.setDashboard(this);
-        for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-            if(teamNameLabel.getText().equals(RequestsHTTP.user.teams.get(i).getName())){
+        for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+            if (teamNameLabel.getText().equals(RequestsHTTP.user.teams.get(i).getName())) {
                 addMemb.setTeamIndex(i);
                 break;
             }
@@ -3967,28 +4001,27 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addTeamMembButtonActionPerformed
 
     private void createTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTeamButtonActionPerformed
-        
+
         String teamName = teamNameTF.getText();
         String teamShortN = teamShortNameTF.getText();
         boolean success = false;
-        if(teamName.isEmpty() || teamShortN.isEmpty()){
+        if (teamName.isEmpty() || teamShortN.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please fill out all fields.", "Info: ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
+        } else {
             try {
                 String url = "https://passtrunk.com/api/team/team";
                 String reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
                         + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
                         + "&" + URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(teamName, "UTF-8")
-                        + "&" + URLEncoder.encode("shortname","UTF-8") + "=" + URLEncoder.encode(teamShortN, "UTF-8");
+                        + "&" + URLEncoder.encode("shortname", "UTF-8") + "=" + URLEncoder.encode(teamShortN, "UTF-8");
                 RequestsHTTP reqhttpMemb = new RequestsHTTP(url, "POST", reqbody);
                 success = reqhttpMemb.doTransaction("", 0);
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        if(success){
+
+        if (success) {
             InitTeams();
             PopulateManTeamLists();
         }
@@ -3998,115 +4031,120 @@ public class DashboardFrame extends javax.swing.JFrame {
 
     private void ownedTeamsListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ownedTeamsListMouseReleased
         try {
-                teamsTMList.clearSelection();
-                String teamName = "";
-                String teamSName = "";
-                String selection = ownedTeamsList.getSelectedValue();
-                DefaultListModel tModelCred = new DefaultListModel();
-                DefaultListModel tModelMemb = new DefaultListModel();
-                String urlCred = "https://passtrunk.com/api/credential/team";
-                String urlMemb = "https://passtrunk.com/api/team/members";
-                String reqbody;
+            teamsTMList.clearSelection();
+            String teamName = "";
+            String teamSName = "";
+            String selection = ownedTeamsList.getSelectedValue();
+            DefaultListModel tModelCred = new DefaultListModel();
+            DefaultListModel tModelMemb = new DefaultListModel();
+            String urlCred = "https://passtrunk.com/api/credential/team";
+            String urlMemb = "https://passtrunk.com/api/team/members";
+            String reqbody;
 
-                for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-                    if(selection.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
-                        teamName = RequestsHTTP.user.teams.get(i).getName();
-                        teamSName = RequestsHTTP.user.teams.get(i).getShortName();
-                        teamIndex = i;
-                        
-                        //Populating Team Credentials:
-                        RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
-                        RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
-                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                        RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
-                        reqhttpCred.doTransaction("getteamcreds", i);
-                        for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
-                            tModelCred.addElement(cred.getName());
-                        }
+            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+                if (selection.equals(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")")) {
+                    teamName = RequestsHTTP.user.teams.get(i).getName();
+                    teamSName = RequestsHTTP.user.teams.get(i).getShortName();
+                    teamIndex = i;
 
-                        //Populating Team members:
-                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                        RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
-                        reqhttpMemb.doTransaction("getteammembers", i);
-                        for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
-                            tModelMemb.addElement(user.getUserFullName());
-                        }
-                        break;
+                    //Populating Team Credentials:
+                    RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
+                    RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
+                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                            + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                    RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
+                    reqhttpCred.doTransaction("getteamcreds", i);
+                    for (Credential cred : RequestsHTTP.user.teams.get(i).teamCreds) {
+                        tModelCred.addElement(cred.getName());
                     }
-                    
+
+                    //Populating Team members:
+                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                            + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                    RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
+                    reqhttpMemb.doTransaction("getteammembers", i);
+                    for (User user : RequestsHTTP.user.teams.get(i).teamMembers) {
+                        tModelMemb.addElement(user.getUserFullName());
+                    }
+                    break;
                 }
-                teamCredsList.setModel(tModelCred);
-                teamMembList.setModel(tModelMemb);
-                teamNameLabel.setText(teamName);
-                teamShortNLabel.setText(teamSName);
-                //teamsTMList.clearSelection();
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+
             }
+            teamCredsList.setModel(tModelCred);
+            teamMembList.setModel(tModelMemb);
+            teamNameLabel.setText(teamName);
+            teamShortNLabel.setText(teamSName);
+            //teamsTMList.clearSelection();
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ownedTeamsListMouseReleased
 
     private void teamsTMListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teamsTMListMouseReleased
         try {
-                ownedTeamsList.clearSelection();
-                String teamName = "";
-                String teamSName = "";
-                String selection = teamsTMList.getSelectedValue();
-                DefaultListModel tModelCred = new DefaultListModel();
-                DefaultListModel tModelMemb = new DefaultListModel();
-                String urlCred = "https://passtrunk.com/api/credential/team";
-                String urlMemb = "https://passtrunk.com/api/team/members";
-                String reqbody;
-                
-                for(int i = 0; i < RequestsHTTP.user.teams.size(); i++){
-                    if(selection.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")){
-                        teamName = RequestsHTTP.user.teams.get(i).getName();
-                        teamSName = RequestsHTTP.user.teams.get(i).getShortName();
-                        teamIndex = i;
-                        //Populating Team Credentials:
-                        RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
-                        RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
-                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                        RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
-                        reqhttpCred.doTransaction("getteamcreds", i);
-                        for(Credential cred: RequestsHTTP.user.teams.get(i).teamCreds){
-                            tModelCred.addElement(cred.getName());
-                        }
+            ownedTeamsList.clearSelection();
+            String teamName = "";
+            String teamSName = "";
+            String selection = teamsTMList.getSelectedValue();
+            DefaultListModel tModelCred = new DefaultListModel();
+            DefaultListModel tModelMemb = new DefaultListModel();
+            String urlCred = "https://passtrunk.com/api/credential/team";
+            String urlMemb = "https://passtrunk.com/api/team/members";
+            String reqbody;
 
-                        //Populating Team members:
-                        reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
-                                + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
-                                + "&" + URLEncoder.encode("teamid","UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
-                        RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
-                        reqhttpMemb.doTransaction("getteammembers", i);
-                        for(User user: RequestsHTTP.user.teams.get(i).teamMembers){
-                            tModelMemb.addElement(user.getUserFullName());
-                        }
-                        break;
+            for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
+                if (selection.equals(RequestsHTTP.user.teams.get(i).getName() + " (" + RequestsHTTP.user.teams.get(i).getShortName() + ")")) {
+                    teamName = RequestsHTTP.user.teams.get(i).getName();
+                    teamSName = RequestsHTTP.user.teams.get(i).getShortName();
+                    teamIndex = i;
+                    //Populating Team Credentials:
+                    RequestsHTTP.user.teams.get(i).teamCreds = new ArrayList();
+                    RequestsHTTP.user.teams.get(i).teamMembers = new ArrayList();
+                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                            + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                    RequestsHTTP reqhttpCred = new RequestsHTTP(urlCred, "GET", reqbody);
+                    reqhttpCred.doTransaction("getteamcreds", i);
+                    for (Credential cred : RequestsHTTP.user.teams.get(i).teamCreds) {
+                        tModelCred.addElement(cred.getName());
                     }
-                   
+
+                    //Populating Team members:
+                    reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
+                            + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamname", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.teams.get(i).getName(), "UTF-8")
+                            + "&" + URLEncoder.encode("teamid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.teams.get(i).getId()), "UTF-8");
+                    RequestsHTTP reqhttpMemb = new RequestsHTTP(urlMemb, "GET", reqbody);
+                    reqhttpMemb.doTransaction("getteammembers", i);
+                    for (User user : RequestsHTTP.user.teams.get(i).teamMembers) {
+                        tModelMemb.addElement(user.getUserFullName());
+                    }
+                    break;
                 }
-                teamCredsList.setModel(tModelCred);
-                teamMembList.setModel(tModelMemb);
-                teamNameLabel.setText(teamName);
-                teamShortNLabel.setText(teamSName);
-                //ownedTeamsList.clearSelection();
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+
             }
+            teamCredsList.setModel(tModelCred);
+            teamMembList.setModel(tModelMemb);
+            teamNameLabel.setText(teamName);
+            teamShortNLabel.setText(teamSName);
+            //ownedTeamsList.clearSelection();
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_teamsTMListMouseReleased
 
     private void credSearchTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_credSearchTFKeyReleased
-        DefaultListModel lm = CustomModel(credSearchTF.getText());
+        DefaultListModel lm = CustomCredModel(credSearchTF.getText());
         credList.setModel(lm);
     }//GEN-LAST:event_credSearchTFKeyReleased
+
+    private void teamSearchTFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_teamSearchTFKeyReleased
+        DefaultListModel lm = CustomTeamModel(teamSearchTF.getText());
+        teamList.setModel(lm);
+    }//GEN-LAST:event_teamSearchTFKeyReleased
 
     //Helper Methods:
     public void SetUserName() {
@@ -4114,7 +4152,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         credList.setModel(InitCreds());
         teamList.setModel(InitTeams());
     }
-    
+
     private DefaultListModel InitCreds() {
         try {
             //populating Credential List:
@@ -4123,7 +4161,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             String reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(Integer.toString(RequestsHTTP.user.getUserID()), "UTF-8")
                     + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
             RequestsHTTP reqhttp = new RequestsHTTP(url, "GET", reqbody);
-            reqhttp.doTransaction("getcred",0);
+            reqhttp.doTransaction("getcred", 0);
             DefaultListModel<String> model = new DefaultListModel();
             for (int i = 0; i < RequestsHTTP.user.credentials.size(); i++) {
                 model.addElement(RequestsHTTP.user.credentials.get(i).getName());
@@ -4135,8 +4173,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         }
         return null;
     }
-    
-    private DefaultListModel InitTeams(){
+
+    private DefaultListModel InitTeams() {
         try {
             //Populating Team List:
             RequestsHTTP.user.teams = new ArrayList();
@@ -4151,6 +4189,7 @@ public class DashboardFrame extends javax.swing.JFrame {
             DefaultListModel<String> model = new DefaultListModel();
             for (int i = 0; i < RequestsHTTP.user.teams.size(); i++) {
                 model.addElement(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")");
+                teamNames.add(RequestsHTTP.user.teams.get(i).getName() + " " + "(" + RequestsHTTP.user.teams.get(i).getShortName() + ")");
             }
             return model;
         } catch (UnsupportedEncodingException ex) {
@@ -4158,8 +4197,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         }
         return null;
     }
-    
-    private void PopulateSettings(){
+
+    private void PopulateSettings() {
         try {
             firstNameSetTF.setText(RequestsHTTP.user.getfName());
             lastNameSetTF.setText(RequestsHTTP.user.getlName());
@@ -4167,24 +4206,25 @@ public class DashboardFrame extends javax.swing.JFrame {
             emailSetTF.setText(RequestsHTTP.user.getEmail());
             phNumSetFTF.setText(RequestsHTTP.user.getPhNumber());
 
-            String url = "https://passtrunk.com/api/settings/settings";        
+            String url = "https://passtrunk.com/api/settings/settings";
             String reqbody = URLEncoder.encode("userid", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(RequestsHTTP.user.getUserID()), "UTF-8")
                     + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
-            
+
             RequestsHTTP reqhttp = new RequestsHTTP(url, "GET", reqbody);
-            reqhttp.doTransaction("getsettings",0);
-            
-            comMethSetCB.setSelectedIndex(RequestsHTTP.user.settings.getComMethod()-1);
+            reqhttp.doTransaction("getsettings", 0);
+
+            comMethSetCB.setSelectedIndex(RequestsHTTP.user.settings.getComMethod() - 1);
             timeOutSetTF.setText(String.valueOf(RequestsHTTP.user.settings.getTimeOut()));
             enTwoVerSetChB.setSelected(RequestsHTTP.user.settings.isTwoStepEnabled());
-            if(RequestsHTTP.user.settings.getTwoStepDelivery() == 1)
-            twoStepADelCB.setSelectedIndex(RequestsHTTP.user.settings.getTwoStepDelivery()-1);            
-            
+            if (RequestsHTTP.user.settings.getTwoStepDelivery() == 1) {
+                twoStepADelCB.setSelectedIndex(RequestsHTTP.user.settings.getTwoStepDelivery() - 1);
+            }
+
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void PopulateLoginsTable() {
         try {
             RequestsHTTP.user.loginList = new ArrayList();
@@ -4193,63 +4233,84 @@ public class DashboardFrame extends javax.swing.JFrame {
                     + "&" + URLEncoder.encode("limit", "UTF-8") + "=" + URLEncoder.encode("25", "UTF-8")
                     + "&" + URLEncoder.encode("token", "UTF-8") + "=" + URLEncoder.encode(RequestsHTTP.user.getToken(), "UTF-8");
             RequestsHTTP reqhttp = new RequestsHTTP(url, "GET", reqbody);
-            reqhttp.doTransaction("getloginlist",0);
-            
+            reqhttp.doTransaction("getloginlist", 0);
+
             DefaultTableModel tModel = new DefaultTableModel();
             tModel.addColumn("Date and Time");
             tModel.addColumn("Location");
             tModel.addColumn("Device");
             tModel.addColumn("IP Address");
-            
+
             for (LoginInfo log : RequestsHTTP.user.loginList) {
                 tModel.addRow(new Object[]{log.getDateTime(), log.getLocation(), log.getDevice(), log.getIpAddress()});
             }
             lastLoginsTable.setModel(tModel);
-            
+
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(DashboardFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void PopulateManTeamLists(){
-        
+
+    public void PopulateManTeamLists() {
+
         DefaultListModel ownedLmodel = new DefaultListModel();
         DefaultListModel allLmodel = new DefaultListModel();
-        for (Team team: RequestsHTTP.user.teams){
-            if(team.getOwnerID() == RequestsHTTP.user.getUserID()){
+        for (Team team : RequestsHTTP.user.teams) {
+            if (team.getOwnerID() == RequestsHTTP.user.getUserID()) {
                 ownedLmodel.addElement(team.getName() + " " + "(" + team.getShortName() + ")");
             }
             allLmodel.addElement(team.getName() + " " + "(" + team.getShortName() + ")");
         }
         ownedTeamsList.setModel(ownedLmodel);
-        teamsTMList.setModel(allLmodel);      
+        teamsTMList.setModel(allLmodel);
         teamCredsList.setModel(new DefaultListModel());
         teamMembList.setModel(new DefaultListModel());
         teamNameLabel.setText("");
         teamShortNLabel.setText("");
     }
-    
-    private DefaultListModel CustomModel(String filter){
+
+    private DefaultListModel CustomCredModel(String filter) {
         DefaultListModel lm = new DefaultListModel();
-        for(int i = 0; i < credNames.size(); i++){
-            if(MeetReq(filter, i)){
+        for (int i = 0; i < credNames.size(); i++) {
+            if (MeetCredReq(filter, i)) {
                 lm.addElement(credNames.get(i));
             }
         }
         return lm;
     }
-    
-    private boolean MeetReq(String filter, int i){
-        if(filter == null || filter.length() == 0){
+
+    private boolean MeetCredReq(String filter, int i) {
+        if (filter == null || filter.length() == 0) {
             return true;
         }
-        if(filter.length() > credNames.get(i).length()){
+        if (filter.length() > credNames.get(i).length()) {
             return false;
         }
-        String tmp = credNames.get(i).substring(0,filter.length());
+        String tmp = credNames.get(i).substring(0, filter.length());
         return filter.equalsIgnoreCase(tmp);
     }
     
+    private DefaultListModel CustomTeamModel(String filter) {
+        DefaultListModel lm = new DefaultListModel();
+        for (int i = 0; i < teamNames.size(); i++) {
+            if (MeetTeamReq(filter, i)) {
+                lm.addElement(teamNames.get(i));
+            }
+        }
+        return lm;
+    }
+
+    private boolean MeetTeamReq(String filter, int i) {
+        if (filter == null || filter.length() == 0) {
+            return true;
+        }
+        if (filter.length() > teamNames.get(i).length()) {
+            return false;
+        }
+        String tmp = teamNames.get(i).substring(0, filter.length());
+        return filter.equalsIgnoreCase(tmp);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -4295,7 +4356,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane addBankAcctSP;
     private javax.swing.JTextField addBankNameBATF;
     private javax.swing.JTextField addBankNameCCTF;
-    private javax.swing.JTextField addBankPasswordTF;
+    private javax.swing.JPasswordField addBankPasswordPF;
     private javax.swing.JTextField addBankRoutNumTF;
     private javax.swing.JTextField addBankURLTF;
     private javax.swing.JTextField addBankUsernameTF;
@@ -4327,17 +4388,17 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField addEmailTF;
     private javax.swing.JTextField addEmailWeTF;
     private javax.swing.JTextField addEncryptionTypeTF;
-    private javax.swing.JTextField addExpDateCCTF;
-    private javax.swing.JTextField addExpDateSoftTF;
+    private org.jdesktop.swingx.JXDatePicker addExpDateCCDP;
+    private org.jdesktop.swingx.JXDatePicker addExpDateSoftDP;
     private javax.swing.JButton addFieldButton;
     private javax.swing.JButton addFieldCustButton;
     private javax.swing.JPanel addLoginPanel;
     private javax.swing.JTextField addNameonCardTF;
     private javax.swing.JTextField addNameonSSTF;
-    private javax.swing.JTextField addPasswordEmTF;
-    private javax.swing.JTextField addPasswordLogTF;
-    private javax.swing.JTextField addPasswordWeTF;
-    private javax.swing.JTextField addPasswordWiTF;
+    private javax.swing.JPasswordField addPasswordEmPF;
+    private javax.swing.JPasswordField addPasswordLogPF;
+    private javax.swing.JPasswordField addPasswordWePF;
+    private javax.swing.JPasswordField addPasswordWiPF;
     private javax.swing.JTextField addSoftKeyTF;
     private javax.swing.JPanel addSoftLicPanel;
     private javax.swing.JTextField addSoftNameTF;
@@ -4365,7 +4426,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField bankUsernameTF;
     private javax.swing.JList<String> bigTeamCredList;
     private javax.swing.JList<String> bigTeamMembList;
-    private javax.swing.JFormattedTextField cardTypeFTF;
+    private javax.swing.JTextField cardTypeTF;
     private javax.swing.JTextField ccvTF;
     private javax.swing.JComboBox<String> chooseCredCB;
     private javax.swing.JComboBox<String> comMethSetCB;
@@ -4403,8 +4464,8 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField emailWeTF;
     private javax.swing.JCheckBox enTwoVerSetChB;
     private javax.swing.JTextField encryptionTypeTF;
-    private javax.swing.JTextField expDateCCTF;
-    private javax.swing.JFormattedTextField expDateSoftFTF;
+    private org.jdesktop.swingx.JXDatePicker expDateCCDP;
+    private org.jdesktop.swingx.JXDatePicker expDateSoftDP;
     private javax.swing.JTextField fieldCont1;
     private javax.swing.JTextField fieldName1;
     private javax.swing.JTextField firstNameSetTF;
@@ -4425,9 +4486,11 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -4538,7 +4601,6 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -4558,14 +4620,13 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nameonCardTF;
     private javax.swing.JTextField nameonSSTF;
     private javax.swing.JButton newsFeedButton;
-    private javax.swing.JEditorPane newsFeedEdPane;
     private javax.swing.JPanel newsFeedPanel;
     private javax.swing.JList<String> ownedTeamsList;
     private javax.swing.JPanel ownedTeamsPanel;
-    private javax.swing.JTextField passwordEmTF;
-    private javax.swing.JTextField passwordLogTF;
-    private javax.swing.JTextField passwordWeTF;
-    private javax.swing.JTextField passwordWiTF;
+    private javax.swing.JPasswordField passwordEmPF;
+    private javax.swing.JPasswordField passwordLogPF;
+    private javax.swing.JPasswordField passwordWePF;
+    private javax.swing.JPasswordField passwordWiPF;
     private javax.swing.JTextField phNumSetFTF;
     private javax.swing.JTextField pwGeneratedTF;
     private javax.swing.JComboBox<String> pwLengthCB;
@@ -4620,5 +4681,5 @@ public class DashboardFrame extends javax.swing.JFrame {
     private javax.swing.JPanel wirelessPanel;
     // End of variables declaration//GEN-END:variables
 // </editor-fold> // variable declarations
-    
+
 }

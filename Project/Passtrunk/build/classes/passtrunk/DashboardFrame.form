@@ -305,15 +305,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="credsDashPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="teamsDashPanel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="credsDashPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="teamsDashPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -321,12 +316,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="credsDashPanel" max="32767" attributes="0"/>
-                          <Component id="teamsDashPanel" max="32767" attributes="0"/>
+                          <Component id="teamsDashPanel" pref="538" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="296" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -345,18 +339,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="credEditButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="1" pref="364" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="credEditButton" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel109" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane1" alignment="1" pref="364" max="32767" attributes="0"/>
-                                      <Component id="credSearchTF" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="credSearchTF" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -367,12 +360,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Component id="credSearchTF" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="credSearchTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="credEditButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -418,6 +414,11 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="credEditButtonActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel109">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Search:"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="teamsDashPanel">
@@ -439,14 +440,17 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane2" pref="364" max="32767" attributes="0"/>
-                              <Component id="teamSearchTF" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="teamEditButton" min="-2" pref="74" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel112" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="teamSearchTF" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="teamEditButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -454,12 +458,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="teamSearchTF" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="teamSearchTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel112" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" pref="431" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="teamEditButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -488,7 +495,7 @@
                 </Container>
                 <Component class="javax.swing.JTextField" name="teamSearchTF">
                   <Events>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="teamSearchTFKeyTyped"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="teamSearchTFKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="teamEditButton">
@@ -506,16 +513,10 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teamEditButtonActionPerformed"/>
                   </Events>
                 </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JEditorPane" name="newsFeedEdPane">
+                <Component class="javax.swing.JLabel" name="jLabel112">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Search:"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -772,12 +773,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="cardTypeFTF" pref="164" max="32767" attributes="0"/>
                                       <Component id="nameonCardTF" pref="164" max="32767" attributes="0"/>
                                       <Component id="jLabel34" min="-2" pref="114" max="-2" attributes="0"/>
                                       <Component id="ccvTF" max="32767" attributes="0"/>
                                       <Component id="jLabel33" min="-2" pref="114" max="-2" attributes="0"/>
-                                      <Component id="expDateCCTF" max="32767" attributes="0"/>
                                       <Component id="jLabel32" min="-2" pref="114" max="-2" attributes="0"/>
                                       <Component id="jLabel31" min="-2" pref="114" max="-2" attributes="0"/>
                                       <Component id="credCardNumTF" max="32767" attributes="0"/>
@@ -786,6 +785,8 @@
                                       <Component id="jLabel29" min="-2" pref="114" max="-2" attributes="0"/>
                                       <Component id="jLabel28" min="-2" pref="114" max="-2" attributes="0"/>
                                       <Component id="credCCNameTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cardTypeTF" max="32767" attributes="0"/>
+                                      <Component id="expDateCCDP" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="106" max="32767" attributes="0"/>
                               </Group>
@@ -809,8 +810,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="expDateCCTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Component id="expDateCCDP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="ccvTF" min="-2" max="-2" attributes="0"/>
@@ -821,8 +822,8 @@
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cardTypeFTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="cardTypeTF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="44" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -869,18 +870,13 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="credCardNumTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="expDateCCTF">
-                        </Component>
                         <Component class="javax.swing.JTextField" name="ccvTF">
                         </Component>
                         <Component class="javax.swing.JTextField" name="nameonCardTF">
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="cardTypeFTF">
-                          <Properties>
-                            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                              <Format format="MM/YYYY" subtype="-1" type="1"/>
-                            </Property>
-                          </Properties>
+                        <Component class="javax.swing.JTextField" name="cardTypeTF">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXDatePicker" name="expDateCCDP">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -896,15 +892,15 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace pref="91" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="passwordEmTF" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="emailTF" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jLabel36" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="urlEmailLoginTF" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="credNameETF" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jLabel19" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jLabel37" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="emailTF" pref="164" max="32767" attributes="0"/>
+                                      <Component id="jLabel36" pref="164" max="32767" attributes="0"/>
+                                      <Component id="urlEmailLoginTF" pref="164" max="32767" attributes="0"/>
+                                      <Component id="jLabel35" pref="164" max="32767" attributes="0"/>
+                                      <Component id="credNameETF" pref="164" max="32767" attributes="0"/>
+                                      <Component id="jLabel19" pref="164" max="32767" attributes="0"/>
+                                      <Component id="jLabel37" alignment="0" pref="164" max="32767" attributes="0"/>
+                                      <Component id="passwordEmPF" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                               </Group>
@@ -928,7 +924,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="passwordEmTF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="passwordEmPF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="197" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -961,7 +957,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="emailTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="passwordEmTF">
+                        <Component class="javax.swing.JPasswordField" name="passwordEmPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -983,9 +979,9 @@
                                       <Component id="jLabel39" alignment="0" max="32767" attributes="0"/>
                                       <Component id="usernameLogTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel40" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="passwordLogTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel41" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="emailLogTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="passwordLogPF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="106" max="32767" attributes="0"/>
                               </Group>
@@ -1005,8 +1001,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="passwordLogTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="passwordLogPF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="emailLogTF" min="-2" max="-2" attributes="0"/>
@@ -1040,9 +1036,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="usernameLogTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="passwordLogTF">
-                        </Component>
                         <Component class="javax.swing.JTextField" name="emailLogTF">
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="passwordLogPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1068,7 +1064,7 @@
                                       <Component id="jLabel45" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="urltoSoftTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel46" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="expDateSoftFTF" max="32767" attributes="0"/>
+                                      <Component id="expDateSoftDP" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="106" max="32767" attributes="0"/>
                               </Group>
@@ -1096,8 +1092,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="expDateSoftFTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="145" max="32767" attributes="0"/>
+                                  <Component id="expDateSoftDP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="143" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1136,12 +1132,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="urltoSoftTF">
                         </Component>
-                        <Component class="javax.swing.JFormattedTextField" name="expDateSoftFTF">
-                          <Properties>
-                            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                              <Format format="MM/YYYY" subtype="-1" type="1"/>
-                            </Property>
-                          </Properties>
+                        <Component class="org.jdesktop.swingx.JXDatePicker" name="expDateSoftDP">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1235,9 +1226,9 @@
                                       <Component id="jLabel53" alignment="0" max="32767" attributes="0"/>
                                       <Component id="usernameWeTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel54" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="passwordWeTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel55" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="emailWeTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="passwordWePF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="106" max="32767" attributes="0"/>
                               </Group>
@@ -1265,8 +1256,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="passwordWeTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="passwordWePF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="emailWeTF" min="-2" max="-2" attributes="0"/>
@@ -1314,9 +1305,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="usernameWeTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="passwordWeTF">
-                        </Component>
                         <Component class="javax.swing.JTextField" name="emailWeTF">
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="passwordWePF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1342,7 +1333,7 @@
                                       <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
                                       <Component id="usernameWiTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel60" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="passwordWiTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="passwordWiPF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="106" max="32767" attributes="0"/>
                               </Group>
@@ -1370,7 +1361,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="passwordWiTF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="passwordWiPF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="146" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1410,7 +1401,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="usernameWiTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="passwordWiTF">
+                        <Component class="javax.swing.JPasswordField" name="passwordWiPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1754,9 +1745,9 @@
                                           <Component id="addBankNameBATF" max="32767" attributes="0"/>
                                           <Component id="addBankURLTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addBankUsernameTF" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="addBankPasswordTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addBankAcctNumTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addBankRoutNumTF" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="addBankPasswordPF" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="123" max="32767" attributes="0"/>
                                   </Group>
@@ -1784,8 +1775,8 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="addBankPasswordTF" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="addBankPasswordPF" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Component id="jLabel70" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="addBankAcctNumTF" min="-2" max="-2" attributes="0"/>
@@ -1842,11 +1833,11 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="addBankUsernameTF">
                             </Component>
-                            <Component class="javax.swing.JTextField" name="addBankPasswordTF">
-                            </Component>
                             <Component class="javax.swing.JTextField" name="addBankAcctNumTF">
                             </Component>
                             <Component class="javax.swing.JTextField" name="addBankRoutNumTF">
+                            </Component>
+                            <Component class="javax.swing.JPasswordField" name="addBankPasswordPF">
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1879,13 +1870,13 @@
                                           <Component id="jLabel74" alignment="0" pref="164" max="32767" attributes="0"/>
                                           <Component id="addCredCardNumTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel75" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="addExpDateCCTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel76" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addCcvTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel77" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addNameonCardTF" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel78" alignment="0" max="32767" attributes="0"/>
                                           <Component id="addCardTypeTF" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="addExpDateCCDP" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="123" max="32767" attributes="0"/>
                                   </Group>
@@ -1909,8 +1900,8 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="addExpDateCCTF" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="addExpDateCCDP" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                       <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="addCcvTF" min="-2" max="-2" attributes="0"/>
@@ -1969,13 +1960,13 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="addCredCardNumTF">
                             </Component>
-                            <Component class="javax.swing.JTextField" name="addExpDateCCTF">
-                            </Component>
                             <Component class="javax.swing.JTextField" name="addCcvTF">
                             </Component>
                             <Component class="javax.swing.JTextField" name="addNameonCardTF">
                             </Component>
                             <Component class="javax.swing.JTextField" name="addCardTypeTF">
+                            </Component>
+                            <Component class="org.jdesktop.swingx.JXDatePicker" name="addExpDateCCDP">
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2001,7 +1992,7 @@
                                       <Component id="jLabel81" alignment="0" max="32767" attributes="0"/>
                                       <Component id="addEmailTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel82" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="addPasswordEmTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addPasswordEmPF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="108" max="32767" attributes="0"/>
                               </Group>
@@ -2025,7 +2016,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="addPasswordEmTF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPasswordEmPF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="188" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -2058,7 +2049,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addEmailTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="addPasswordEmTF">
+                        <Component class="javax.swing.JPasswordField" name="addPasswordEmPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2080,9 +2071,9 @@
                                       <Component id="jLabel84" alignment="0" max="32767" attributes="0"/>
                                       <Component id="addUsernameLogTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel85" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="addPasswordLogTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel86" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="addEmailLogTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addPasswordLogPF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="108" max="32767" attributes="0"/>
                               </Group>
@@ -2102,8 +2093,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="addPasswordLogTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="addPasswordLogPF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="addEmailLogTF" min="-2" max="-2" attributes="0"/>
@@ -2137,9 +2128,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addUsernameLogTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="addPasswordLogTF">
-                        </Component>
                         <Component class="javax.swing.JTextField" name="addEmailLogTF">
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="addPasswordLogPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2165,7 +2156,7 @@
                                       <Component id="jLabel90" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="addUrltoSoftTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel91" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="addExpDateSoftTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addExpDateSoftDP" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="108" max="32767" attributes="0"/>
                               </Group>
@@ -2193,8 +2184,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="addExpDateSoftTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="137" max="32767" attributes="0"/>
+                                  <Component id="addExpDateSoftDP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="135" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2233,7 +2224,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addUrltoSoftTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="addExpDateSoftTF">
+                        <Component class="org.jdesktop.swingx.JXDatePicker" name="addExpDateSoftDP">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2327,9 +2318,9 @@
                                       <Component id="jLabel98" alignment="0" max="32767" attributes="0"/>
                                       <Component id="addUsernameWeTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel99" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="addPasswordWeTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel100" alignment="0" pref="164" max="32767" attributes="0"/>
                                       <Component id="addEmailWeTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addPasswordWePF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="108" max="32767" attributes="0"/>
                               </Group>
@@ -2357,8 +2348,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="addPasswordWeTF" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="addPasswordWePF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="addEmailWeTF" min="-2" max="-2" attributes="0"/>
@@ -2406,9 +2397,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addUsernameWeTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="addPasswordWeTF">
-                        </Component>
                         <Component class="javax.swing.JTextField" name="addEmailWeTF">
+                        </Component>
+                        <Component class="javax.swing.JPasswordField" name="addPasswordWePF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2434,7 +2425,7 @@
                                       <Component id="jLabel104" alignment="0" max="32767" attributes="0"/>
                                       <Component id="addUsernameWiTF" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel105" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="addPasswordWiTF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="addPasswordWiPF" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="108" max="32767" attributes="0"/>
                               </Group>
@@ -2462,7 +2453,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="addPasswordWiTF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addPasswordWiPF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="137" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -2502,7 +2493,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addUsernameWiTF">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="addPasswordWiTF">
+                        <Component class="javax.swing.JPasswordField" name="addPasswordWiPF">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3017,7 +3008,6 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="inheritsPopupMenu" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel110">

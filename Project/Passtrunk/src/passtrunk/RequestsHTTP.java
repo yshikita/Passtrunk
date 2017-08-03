@@ -251,7 +251,7 @@ public class RequestsHTTP {
                         credCard.setExpDate(AESEncryptDecrypt.decrypt(credential.getString("expdate"), keyS));
                         credCard.setNameOnCard(AESEncryptDecrypt.decrypt(credential.getString("owner"), keyS));
                         credCard.setCcvNumber(AESEncryptDecrypt.decrypt(credential.getString("ccv"), keyS));
-                        credCard.setType(credential.getString("cardtype"));
+                        credCard.setType(AESEncryptDecrypt.decrypt(credential.getString("cardtype"),keyS));
                         user.credentials.add(credCard);
                         break;
                     case "Email":
@@ -433,7 +433,7 @@ public class RequestsHTTP {
                         credCard.setExpDate(AESEncryptDecrypt.decrypt(credential.getString("expdate"), keyS));
                         credCard.setNameOnCard(AESEncryptDecrypt.decrypt(credential.getString("owner"), keyS));
                         credCard.setCcvNumber(AESEncryptDecrypt.decrypt(credential.getString("ccv"), keyS));
-                        credCard.setType(credential.getString("cardtype"));
+                        credCard.setType(AESEncryptDecrypt.decrypt(credential.getString("cardtype"),keyS));
                         user.teams.get(team).teamCreds.add(credCard);
                         break;
                     case "Email":
